@@ -218,7 +218,15 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
       <h3>Shopping Cart <span id="cartCountLabel"></span></h3>
       <button onclick="toggleCart()">✕</button>
     </div>
-    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-items" id="cartItems">
+      <div class="countdown-bar" id="countdownBar" style="display:none">
+        ⏰ LIMITED TIME OFFER — <span class="timer" id="countdownDisplay">15:00</span> remaining
+      </div>
+      <div id="cartListItems"></div>
+      <div class="cart-empty" id="cartEmpty" style="display:none">
+        <div class="empty-icon">🛒</div>Your cart is empty
+      </div>
+    </div>
     <!-- Default cart footer -->
     <div class="cart-ftr" id="cartFooter">
       <div class="cart-total">
@@ -504,13 +512,15 @@ function setCat(cat){
 // ══════════════════════════════════════════════════════
 function addToCart(code){
   if(!cart[code]) cart[code]=0;
-  cart[code]++;save();updateUI();renderCart();
+  cart[code]++;save();updateUI();
   
-  // Update only the button(s) for this code — no full re-render
+  // Update button first — so even if renderCart fails, button shows qty
   document.querySelectorAll(`.var-add[data-code="${code}"]`).forEach(btn=>{
     btn.className='var-add done';
     btn.textContent='✓ '+cart[code];
   });
+  
+  try{renderCart()}catch(e){}
   
   const p=products.find(x=>x.code===code);
   showToast("+1 "+p.name+(p.spec?" · "+p.spec:""),'success');
@@ -554,6 +564,7 @@ function updateUI(){
 function renderCart(){
   const el=document.getElementById("cartListItems");
   const empty=document.getElementById("cartEmpty");
+  if(!el||!empty) return;
   const items=Object.entries(cart);
   if(!items.length){
     el.innerHTML='';
