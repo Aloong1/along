@@ -566,11 +566,12 @@ function render(){
           <span class="var-code">${p.code}</span>
           <span class="var-spec">${p.spec}</span>
           <span class="var-price">$${p.price}</span>
-          <button class="var-add ${cart[p.code]?'done':'add'}" onclick="addToCart('${p.code.replace(/'/g,"\\'")}')">${cart[p.code]?'✓ '+cart[p.code]:'+ Add'}</button>
+          <button class="var-add add" data-code="${p.code.replace(/'/g,"\\'")}" onclick="addToCart('${p.code.replace(/'/g,"\\'")}')">+ Add</button>
         </div>`).join("")
       }</div>
     </div>`;
   }).join("");
+  syncCartButtons();
 }
 
 function toggleGroup(row,groupName){
@@ -593,18 +594,38 @@ function setCat(cat){
 function addToCart(code){
   if(!cart[code]) cart[code]=0;
   cart[code]++;save();updateUI();renderCart();
+  
+  // Update only the button(s) for this code — no full re-render
+  document.querySelectorAll(`.var-add[data-code="${code}"]`).forEach(btn=>{
+    btn.className='var-add done';
+    btn.textContent='✓ '+cart[code];
+  });
+  
   const p=products.find(x=>x.code===code);
   showToast("+1 "+p.name+(p.spec?" · "+p.spec:""),'success');
-  render(); // keeps expanded state intact
+}
+
+function syncCartButtons(){
+  document.querySelectorAll('.var-add').forEach(btn=>{
+    const code=btn.dataset.code;
+    if(!code) return;
+    if(cart[code]){
+      btn.className='var-add done';
+      btn.textContent='✓ '+cart[code];
+    }else{
+      btn.className='var-add add';
+      btn.textContent='+ Add';
+    }
+  });
 }
 
 function removeFromCart(code){
   if(!cart[code]) return;
   cart[code]--;if(cart[code]<=0) delete cart[code];
-  save();updateUI();renderCart();render();
+  save();updateUI();renderCart();syncCartButtons();
 }
 
-function clearCart(){cart={};save();updateUI();renderCart();render();showToast("Cart cleared")}
+function clearCart(){cart={};save();updateUI();renderCart();syncCartButtons();showToast("Cart cleared")}
 function totalCount(){return Object.values(cart).reduce((a,b)=>a+b,0)}
 function totalPrice(){return Object.entries(cart).reduce((s,[c,q])=>s+q*(products.find(p=>p.code===c)?.price||0),0)}
 function itemCount(){return Object.keys(cart).length}
