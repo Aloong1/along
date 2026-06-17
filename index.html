@@ -340,30 +340,35 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
   <div class="order-modal">
 
     <!-- Urgency banner -->
-    <div class="urgency-banner">
+    <div class="urgency-banner" style="background:#1a1a2e">
       <span class="icon-circle">!</span>
-      <span>Hurry! Your discount is about to expire!</span>
+      <span>快！您的折扣即将到期！</span>
     </div>
 
-    <!-- Countdown card -->
-    <div class="countdown-card">
-      <div class="countdown-label">Limited Time Offer</div>
-      <div class="countdown-time" id="confirmCountdownDisplay">30:00</div>
-      <div class="countdown-sub">Complete your order within 30 minutes to secure best pricing</div>
+    <!-- Countdown card — clean like ref -->
+    <div class="countdown-card" style="margin:14px 16px 0;padding:12px 12px 10px">
+      <div class="countdown-time" id="confirmCountdownDisplay" style="font-size:42px">30:00</div>
     </div>
 
-    <!-- Discount bar — green box with promo -->
-    <div class="discount-bar" style="flex-direction:column;align-items:stretch;gap:2px;padding:10px 16px">
-      <div style="display:flex;align-items:center;gap:6px">
+    <!-- Discount row — green check + text, no tag -->
+    <div class="discount-bar" style="margin:8px 16px 0;padding:10px 14px">
+      <div class="left">
         <span class="check-icon">✓</span>
-        <span style="font-size:13px;font-weight:700;color:#155724">🎉 立享5%折扣</span>
-        <span class="tag-pill" style="margin-left:auto">Limited</span>
+        <span style="font-size:13px"><strong>限时优惠</strong> 立享5%折扣</span>
       </div>
-      <div style="font-size:11px;color:#155724;padding-left:26px;opacity:.8">折扣将自动应用于你的订单</div>
     </div>
+
+    <!-- View details link -->
+    <div style="text-align:right;padding:2px 18px 0;font-size:11px;color:#9aa0a8;cursor:pointer;flex-shrink:0" onclick="closeConfirmPanel()">查看详情 →</div>
 
     <!-- Order items -->
-    <div class="order-items-wrap" id="confirmOrderItems"></div>
+    <div class="order-items-wrap" id="confirmOrderItems" style="margin-top:6px"></div>
+
+    <!-- Total -->
+    <div class="order-total-box">
+      <span class="lbl">合计</span>
+      <span class="val" id="confirmTotalPrice">$0</span>
+    </div>
 
     <!-- Instruction -->
     <div style="font-size:11px;color:#6b7280;padding:6px 16px 0;line-height:1.5;text-align:center;flex-shrink:0">
@@ -371,18 +376,11 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
       your dedicated customer service representative <strong>ASAP</strong>
     </div>
 
-    <!-- Total -->
-    <div class="order-total-box">
-      <span class="lbl">Order Total</span>
-      <span class="val" id="confirmTotalPrice">$0</span>
-    </div>
-
-    <!-- Action -->
+    <!-- Action — blue button matching ref -->
     <div class="order-action-wrap">
-      <button class="btn-checkout" id="copyOrderBtn" onclick="copyOrder()" style="margin-bottom:8px">
-        📋 Copy Order List
+      <button class="btn-checkout" id="copyOrderBtn" onclick="copyOrder()" style="margin-bottom:6px">
+        立即领取限时优惠
       </button>
-      <div class="opt-out" onclick="closeConfirmPanel()">I'll pass on this offer →</div>
     </div>
 
   </div>
