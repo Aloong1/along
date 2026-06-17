@@ -342,31 +342,31 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
     <!-- Urgency banner -->
     <div class="urgency-banner" style="background:#1a1a2e">
       <span class="icon-circle">!</span>
-      <span>快！您的折扣即将到期！</span>
+      <span>Hurry! Your discount is about to expire!</span>
     </div>
 
-    <!-- Countdown card — clean like ref -->
+    <!-- Countdown card -- clean like ref -->
     <div class="countdown-card" style="margin:14px 16px 0;padding:12px 12px 10px">
       <div class="countdown-time" id="confirmCountdownDisplay" style="font-size:42px">30:00</div>
     </div>
 
-    <!-- Discount row — green check + text, no tag -->
+    <!-- Discount row -- green check + text -->
     <div class="discount-bar" style="margin:8px 16px 0;padding:10px 14px">
       <div class="left">
         <span class="check-icon">✓</span>
-        <span style="font-size:13px"><strong>限时优惠</strong> 立享5%折扣</span>
+        <span style="font-size:13px"><strong>Limited Time</strong> Get 5% OFF</span>
       </div>
     </div>
 
     <!-- View details link -->
-    <div style="text-align:right;padding:2px 18px 0;font-size:11px;color:#9aa0a8;cursor:pointer;flex-shrink:0" onclick="closeConfirmPanel()">查看详情 →</div>
+    <div style="text-align:right;padding:2px 18px 0;font-size:11px;color:#9aa0a8;cursor:pointer;flex-shrink:0" onclick="closeConfirmPanel()">View Details →</div>
 
-    <!-- Order items -->
+    <!-- Order items with qty & specs -->
     <div class="order-items-wrap" id="confirmOrderItems" style="margin-top:6px"></div>
 
     <!-- Total -->
     <div class="order-total-box">
-      <span class="lbl">合计</span>
+      <span class="lbl">Order Total</span>
       <span class="val" id="confirmTotalPrice">$0</span>
     </div>
 
@@ -376,10 +376,10 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
       your dedicated customer service representative <strong>ASAP</strong>
     </div>
 
-    <!-- Action — blue button matching ref -->
+    <!-- Action -- blue button -->
     <div class="order-action-wrap">
       <button class="btn-checkout" id="copyOrderBtn" onclick="copyOrder()" style="margin-bottom:6px">
-        立即领取限时优惠
+        📋 Claim Your Discount & Copy Order
       </button>
     </div>
 
