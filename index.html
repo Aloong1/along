@@ -384,7 +384,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
       </div>
 
       <!-- Blue button -->
-      <button class="ref-btn-blue" onclick="copyOrder()">📋 Copy Order List</button>
+      <button class="ref-btn-blue" id="copyOrderBtn" onclick="copyOrder()">📋 Copy Order List</button>
 
     </div>
 
@@ -814,6 +814,9 @@ function copyOrder(){
   btn.textContent="✅ Copied Successfully!";
   btn.style.background="#1bc47d";
   btn.style.boxShadow="0 2px 8px rgba(27,196,125,.3)";
+  
+  // Toast reminder
+  showToast("📋 Order copied! Please send it to WhatsApp customer service to place your order", 'info');
   
   // Clear cart after copy
   cart={};save();updateUI();syncCartButtons();
