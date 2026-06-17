@@ -1,110 +1,82 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Premium Peptide Products — Professional Research Grade</title>
 <style>
-/* ========== RESET & BASE ========== */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-serif;background:#f4f5f7;color:#1a1a2e;line-height:1.6;padding-bottom:90px;min-height:100vh;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-serif;background:#f4f5f7;color:#1a1a2e;line-height:1.6;padding-bottom:90px;min-height:100vh;-webkit-font-smoothing:antialiased}
 
-/* ========== TOP BAR ========== */
-.top-bar{background:#0f1923;color:rgba(255,255,255,.4);text-align:center;font-size:10px;padding:5px 10px;letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.04)}
-
-/* ========== HEADER ========== */
-.header{background:linear-gradient(135deg,#0f1923 0%,#1a2a4a 100%);color:#fff;padding:0;position:relative;overflow:hidden}
-.header::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(37,150,255,.08) 0%,transparent 70%);pointer-events:none}
+/* ===== HEADER ===== */
+.top-bar{background:#0f1923;color:rgba(255,255,255,.4);text-align:center;font-size:10px;padding:5px 10px;letter-spacing:.5px;text-transform:uppercase}
+.header{background:linear-gradient(135deg,#0f1923,#1a2a4a);color:#fff;padding:0;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(37,150,255,.08),transparent 70%);pointer-events:none}
 .header-inner{max-width:820px;margin:0 auto;padding:28px 20px 22px;position:relative;z-index:1;display:flex;align-items:center;gap:16px}
 .header-logo{flex-shrink:0;width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#2596ff,#1a6bb5);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;box-shadow:0 4px 12px rgba(37,150,255,.25)}
-.header-text{flex:1}
 .header-text h1{font-size:19px;font-weight:700;letter-spacing:-.3px;line-height:1.3}
 .header-text h1 span{font-weight:400;opacity:.65}
-.header-text .sub{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;letter-spacing:.2px}
-.header-badge{flex-shrink:0;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:6px 12px;text-align:center}
-.header-badge .val{font-size:13px;font-weight:700;color:#fff}
+.header-text .sub{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px}
+.header-badge{flex-shrink:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:6px 12px;text-align:center}
+.header-badge .val{font-size:13px;font-weight:700}
 .header-badge .lbl{font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-top:1px}
-.header-trust{display:flex;gap:16px;padding:12px 20px;background:rgba(0,0,0,.08);border-top:1px solid rgba(255,255,255,.04);justify-content:center;flex-wrap:wrap;max-width:820px;margin:0 auto}
+.header-trust{display:flex;gap:16px;padding:12px 20px;background:rgba(0,0,0,.08);justify-content:center;flex-wrap:wrap;max-width:820px;margin:0 auto}
 .header-trust span{font-size:10px;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:4px}
 .header-trust span strong{color:rgba(255,255,255,.6);font-weight:500}
 
-/* ========== SEARCH ========== */
+/* ===== SEARCH & FILTER ===== */
 .search-wrap{max-width:820px;margin:0 auto;padding:16px 16px 0}
-.search-wrap .search-inner{position:relative}
-.search-wrap input{width:100%;padding:11px 16px 11px 40px;border-radius:12px;border:1.5px solid #e8eaed;background:#fff;color:#1a1a2e;font-size:14px;outline:none;transition:all .25s ease;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.search-inner{position:relative}
+.search-wrap input{width:100%;padding:11px 16px 11px 40px;border-radius:12px;border:1.5px solid #e8eaed;background:#fff;font-size:14px;outline:none;transition:all .25s}
 .search-wrap input:focus{border-color:#2596ff;box-shadow:0 0 0 3px rgba(37,150,255,.1)}
-.search-wrap input::placeholder{color:#9aa0a8}
 .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#9aa0a8;font-size:14px;pointer-events:none}
-
-/* ========== FILTER BAR ========== */
 .filter-wrap{max-width:820px;margin:0 auto;padding:10px 16px 0}
-.filter{display:flex;gap:5px;overflow-x:auto;padding:2px 0;scrollbar-width:none;-ms-overflow-style:none}
+.filter{display:flex;gap:5px;overflow-x:auto;padding:2px 0;scrollbar-width:none}
 .filter::-webkit-scrollbar{display:none}
-.filter-btn{padding:7px 16px;border-radius:20px;border:1.5px solid #e0e2e6;background:#fff;color:#5f6368;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .2s ease;user-select:none}
+.filter-btn{padding:7px 16px;border-radius:20px;border:1.5px solid #e0e2e6;background:#fff;color:#5f6368;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .2s;user-select:none}
 .filter-btn:hover{border-color:#c4c7cc;color:#1a1a2e}
 .filter-btn.active{background:#2596ff;border-color:#2596ff;color:#fff;box-shadow:0 2px 8px rgba(37,150,255,.25)}
-.filter-btn:active{transform:scale(.96)}
+.results-count{font-size:11px;color:#9aa0a8;padding:0 16px;max-width:820px;margin:6px auto 0}
 
-/* ========== RESULTS COUNT ========== */
-.results-count{font-size:11px;color:#9aa0a8;padding:0 16px;max-width:820px;margin:0 auto;margin-top:6px}
-
-/* ========== PRODUCT LIST ========== */
+/* ===== PRODUCT LIST ===== */
 .list-wrap{max-width:820px;margin:0 auto;padding:0 16px}
-.list-scroll{margin-top:8px}
-
-.prod-group{border-radius:10px;background:#fff;margin-bottom:5px;overflow:hidden;transition:box-shadow .2s;box-shadow:0 1px 0 rgba(0,0,0,.04)}
-.prod-group:hover{box-shadow:0 2px 8px rgba(0,0,0,.05)}
-
+.prod-group{border-radius:10px;background:#fff;margin-bottom:5px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.04)}
 .prod-row{display:flex;align-items:center;padding:12px 14px;cursor:pointer;gap:10px;transition:background .15s;user-select:none}
 .prod-row:active{background:#f8f9fb}
-.prod-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;position:relative;transition:transform .2s}
-.prod-dot::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid transparent;transition:border-color .2s}
-.prod-group:hover .prod-dot::after{border-color:currentColor}
+.prod-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;position:relative}
 .prod-info{flex:1;min-width:0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .prod-name{font-size:14px;font-weight:600;color:#1a1a2e;letter-spacing:-.2px}
 .prod-count{font-size:10px;color:#888;background:#f0f1f3;padding:2px 8px;border-radius:10px;font-weight:500;line-height:18px;flex-shrink:0}
 .prod-cat-tag{font-size:10px;color:#9aa0a8;font-weight:400}
-.prod-price{font-size:14px;font-weight:700;color:#2596ff;flex-shrink:0;margin-left:auto;margin-right:6px}
-.prod-arrow{font-size:8px;color:#bbb;transition:transform .3s cubic-bezier(.4,0,.2,1),color .2s;flex-shrink:0;width:20px;height:20px;display:flex;align-items:center;justify-content:center;border-radius:50%}
-.prod-group:hover .prod-arrow{color:#2596ff}
+.prod-range{font-size:13px;font-weight:700;color:#2596ff;flex-shrink:0;margin-left:auto;margin-right:6px}
+.prod-arrow{font-size:8px;color:#bbb;transition:transform .3s;flex-shrink:0;width:20px;height:20px;display:flex;align-items:center;justify-content:center;border-radius:50%}
 .prod-arrow.open{transform:rotate(180deg);color:#2596ff}
-
-.prod-variants{display:none;border-top:1px solid #f0f1f3;background:#fafbfc;overflow:hidden}
+.prod-variants{display:none;border-top:1px solid #f0f1f3;background:#fafbfc}
 .prod-variants.open{display:block;animation:slideDown .25s ease}
 @keyframes slideDown{from{opacity:0;max-height:0}to{opacity:1;max-height:500px}}
-.var-row{display:flex;align-items:center;padding:8px 14px 8px 36px;gap:8px;font-size:13px;transition:background .1s;border-bottom:1px solid #f3f4f6}
+.var-row{display:flex;align-items:center;padding:8px 14px 8px 36px;gap:8px;font-size:13px;border-bottom:1px solid #f3f4f6}
 .var-row:last-child{border-bottom:none}
 .var-row:hover{background:#f0f2f5}
 .var-code{color:#888;font-weight:500;min-width:50px;font-size:11px;font-family:'SF Mono','Menlo','Consolas',monospace}
-.var-spec{color:#6b7280;font-size:12px;min-width:0;flex:0 1 auto}
-.var-spec .uom{color:#bbb;font-size:10px}
+.var-spec{color:#6b7280;font-size:12px}
 .var-price{font-weight:700;color:#1a1a2e;margin-left:auto;flex-shrink:0;font-size:13px}
-.var-price .usd{font-size:10px;color:#888;font-weight:400}
-.var-add{background:#f0f2f5;border:none;border-radius:8px;padding:5px 12px;color:#1a1a2e;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;flex-shrink:0;white-space:nowrap}
-.var-add:hover{background:#2596ff;color:#fff;box-shadow:0 2px 8px rgba(37,150,255,.2)}
+.var-add{border:none;border-radius:8px;padding:5px 12px;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;white-space:nowrap;transition:all .15s}
+.var-add.add{background:#f0f2f5;color:#1a1a2e}
+.var-add.add:hover{background:#2596ff;color:#fff;box-shadow:0 2px 8px rgba(37,150,255,.2)}
+.var-add.done{background:#1bc47d;color:#fff}
 .var-add:active{transform:scale(.95)}
-.var-add.in-cart{background:#1bc47d;color:#fff}
-.var-add.in-cart:hover{background:#15a86c;color:#fff}
 
-/* ========== FLOATING CART BADGE ========== */
-.cart-float{position:fixed;bottom:90px;right:20px;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#2596ff,#1a6bb5);color:#fff;border:none;cursor:pointer;font-size:20px;box-shadow:0 4px 16px rgba(37,150,255,.3);display:none;align-items:center;justify-content:center;z-index:90;transition:all .25s cubic-bezier(.4,0,.2,1)}
-.cart-float:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,150,255,.35)}
-.cart-float:active{transform:scale(.95)}
-.cart-float .badge{position:absolute;top:-4px;right:-4px;background:#ff4757;color:#fff;border-radius:50%;width:20px;height:20px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #fff;line-height:1}
-.cart-float.visible{display:flex;animation:bounceIn .35s cubic-bezier(.68,-.55,.265,1.55)}
-@keyframes bounceIn{0%{transform:scale(0)}50%{transform:scale(1.12)}100%{transform:scale(1)}}
-
-/* ========== BOTTOM CART BAR ========== */
+/* ===== CART BAR ===== */
 .cart-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(0,0,0,.06);padding:10px 16px;display:none;align-items:center;gap:12px;z-index:100;box-shadow:0 -4px 20px rgba(0,0,0,.04)}
-.cart-bar .cart-info{flex:1;font-size:12px;color:#6b7280}
-.cart-bar .cart-info strong{color:#1a1a2e;font-size:15px}
-.cart-bar .cart-info .sep{color:#ddd;margin:0 4px}
-.cart-bar .view-cart{background:#2596ff;border:none;border-radius:10px;padding:10px 22px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;flex-shrink:0}
-.cart-bar .view-cart:hover{background:#1a7fe8;box-shadow:0 4px 12px rgba(37,150,255,.25)}
-.cart-bar .view-cart:active{transform:scale(.97)}
+.cart-info{flex:1;font-size:12px;color:#6b7280}
+.cart-info strong{color:#1a1a2e;font-size:15px}
+.cart-info .sep{color:#ddd;margin:0 4px}
+.view-cart{background:#2596ff;border:none;border-radius:10px;padding:10px 22px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;flex-shrink:0}
+.view-cart:hover{background:#1a7fe8;box-shadow:0 4px 12px rgba(37,150,255,.25)}
+.view-cart:active{transform:scale(.97)}
 
-/* ========== CART DRAWER ========== */
+/* ===== CART DRAWER ===== */
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:200;display:none;justify-content:center;align-items:flex-end;backdrop-filter:blur(4px)}
 .cart-overlay.open{display:flex}
 .cart-drawer{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:520px;max-height:78vh;display:flex;flex-direction:column;animation:cartUp .35s cubic-bezier(.4,0,.2,1);box-shadow:0 -8px 40px rgba(0,0,0,.06)}
@@ -112,7 +84,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .cart-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 14px;border-bottom:1px solid #f0f1f3;flex-shrink:0}
 .cart-hdr h3{font-size:17px;font-weight:700}
 .cart-hdr h3 span{font-size:12px;font-weight:400;color:#888;margin-left:6px}
-.cart-hdr button{width:30px;height:30px;border-radius:50%;border:1px solid #e0e2e6;background:transparent;color:#888;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.cart-hdr button{width:30px;height:30px;border-radius:50%;border:1px solid #e0e2e6;background:transparent;color:#888;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .cart-hdr button:hover{border-color:#2596ff;color:#2596ff}
 .cart-items{flex:1;overflow-y:auto;padding:2px 0}
 .cart-empty{text-align:center;padding:40px 20px;color:#bbb;font-size:13px}
@@ -120,95 +92,105 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .cart-item{display:flex;align-items:center;padding:10px 16px;gap:10px;border-bottom:1px solid #f5f6f7;animation:itemIn .2s ease}
 @keyframes itemIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
 .cart-item-info{flex:1;min-width:0}
-.cart-item-name{font-size:13px;font-weight:600;color:#1a1a2e}
+.cart-item-name{font-size:13px;font-weight:600}
 .cart-item-spec{font-size:11px;color:#9aa0a8;margin-top:1px}
 .cart-qty{display:flex;align-items:center;gap:6px;flex-shrink:0}
-.cart-qty button{width:26px;height:26px;border-radius:50%;border:1px solid #e0e2e6;background:transparent;color:#5f6368;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;font-weight:500}
+.cart-qty button{width:26px;height:26px;border-radius:50%;border:1px solid #e0e2e6;background:transparent;color:#5f6368;font-size:13px;cursor:pointer;font-weight:500}
 .cart-qty button:hover{border-color:#2596ff;color:#2596ff}
-.cart-qty button:active{background:#f0f2f5}
-.cart-qty span{font-size:14px;font-weight:700;min-width:22px;text-align:center;color:#1a1a2e}
+.cart-qty span{font-size:14px;font-weight:700;min-width:22px;text-align:center}
 .cart-item-total{font-size:13px;font-weight:700;color:#2596ff;min-width:50px;text-align:right;font-family:monospace}
 .cart-ftr{border-top:1px solid #f0f1f3;padding:14px 20px 20px;flex-shrink:0}
 .cart-total{display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:700;margin-bottom:10px}
 .cart-total .total-price{color:#2596ff;font-size:19px;font-family:monospace}
 .cart-actions{display:flex;gap:8px}
-.btn-primary{flex:1;padding:12px;border-radius:10px;border:none;background:#2596ff;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:4px}
+.btn-primary{flex:1;padding:12px;border-radius:10px;border:none;background:#2596ff;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
 .btn-primary:hover{background:#1a7fe8;box-shadow:0 4px 12px rgba(37,150,255,.25)}
 .btn-primary:active{transform:scale(.98)}
-.btn-secondary{padding:12px 16px;border-radius:10px;border:1.5px solid #e0e2e6;background:transparent;color:#5f6368;font-size:12px;font-weight:500;cursor:pointer;transition:all .15s}
+.btn-secondary{padding:12px 16px;border-radius:10px;border:1.5px solid #e0e2e6;background:transparent;color:#5f6368;font-size:12px;font-weight:500;cursor:pointer}
 .btn-secondary:hover{border-color:#bbb;color:#1a1a2e}
 
-/* ========== ORDER MODAL (On-Page Form) ========== */
-.order-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;display:none;justify-content:center;align-items:center;padding:20px;backdrop-filter:blur(4px)}
+/* ===== ORDER MODAL — Mobile Checkout Style ===== */
+.order-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;display:none;justify-content:center;align-items:center;padding:16px;backdrop-filter:blur(6px)}
 .order-overlay.open{display:flex}
-.order-modal{background:#fff;border-radius:18px;width:100%;max-width:480px;padding:28px 24px 20px;animation:modalIn .3s cubic-bezier(.4,0,.2,1);box-shadow:0 20px 60px rgba(0,0,0,.12);max-height:92vh;overflow-y:auto}
-@keyframes modalIn{from{opacity:0;transform:scale(.94) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.order-modal h2{font-size:19px;font-weight:700;text-align:center;margin-bottom:2px}
-.order-modal .sub{text-align:center;font-size:12px;color:#9aa0a8;margin-bottom:16px}
+.order-modal{background:#fff;border-radius:20px;width:100%;max-width:400px;padding:0 0 16px;animation:modalIn .3s cubic-bezier(.4,0,.2,1);box-shadow:0 24px 80px rgba(0,0,0,.18);overflow:hidden}
+@keyframes modalIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
 
-/* Order form */
-.order-form label{display:block;font-size:12px;font-weight:600;color:#1a1a2e;margin-bottom:4px;margin-top:10px}
-.order-form label:first-of-type{margin-top:0}
-.order-form input{width:100%;padding:9px 12px;border-radius:8px;border:1.5px solid #e0e2e6;font-size:13px;outline:none;transition:all .15s;background:#fff}
-.order-form input:focus{border-color:#2596ff;box-shadow:0 0 0 3px rgba(37,150,255,.06)}
-.order-form textarea{width:100%;padding:9px 12px;border-radius:8px;border:1.5px solid #e0e2e6;font-size:13px;outline:none;transition:all .15s;resize:vertical;min-height:50px;font-family:inherit;background:#fff}
-.order-form textarea:focus{border-color:#2596ff;box-shadow:0 0 0 3px rgba(37,150,255,.06)}
+/* Urgency banner */
+.urgency-banner{background:#ff4757;color:#fff;padding:10px 18px;font-size:12px;font-weight:600;text-align:center;letter-spacing:.3px;display:flex;align-items:center;justify-content:center;gap:6px}
+.urgency-banner .icon{font-size:15px}
 
-.order-summary-box{background:#f8f9fa;border-radius:10px;padding:12px;margin:12px 0 6px;max-height:160px;overflow-y:auto}
-.order-line{font-size:11px;padding:3px 0;color:#4a4a5a;font-family:'SF Mono','Menlo',monospace;line-height:1.5;border-bottom:1px solid rgba(0,0,0,.03)}
-.order-line:last-child{border-bottom:none}
-.order-total-line{border-top:1px solid #e0e2e6;margin-top:6px;padding-top:6px;font-size:13px;font-weight:700;text-align:right;color:#2596ff;font-family:monospace}
+/* Countdown card */
+.countdown-card{background:#fff7e6;margin:14px 16px 0;border-radius:14px;padding:18px 16px 14px;text-align:center;border:1px solid #ffe0a0}
+.countdown-label{font-size:11px;color:#cc8a00;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.countdown-time{font-size:42px;font-weight:800;color:#1a1a2e;font-variant-numeric:tabular-nums;letter-spacing:2px;line-height:1.1;font-family:'SF Mono','Menlo','Consolas',monospace}
+.countdown-sub{font-size:11px;color:#aa7000;margin-top:4px;opacity:.8}
 
-.order-submit-wrap{display:flex;gap:8px;margin-top:14px}
-.order-submit{flex:1;padding:12px;border-radius:10px;border:none;background:#2596ff;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
-.order-submit:hover{background:#1a7fe8;box-shadow:0 4px 12px rgba(37,150,255,.25)}
-.order-submit:active{transform:scale(.98)}
-.order-cancel{padding:12px 16px;border-radius:10px;border:1.5px solid #e0e2e6;background:transparent;color:#5f6368;font-size:12px;font-weight:500;cursor:pointer;transition:all .15s}
-.order-cancel:hover{border-color:#bbb;color:#1a1a2e}
+/* Order summary inside modal */
+.order-items-wrap{padding:12px 16px 0;max-height:220px;overflow-y:auto}
+.order-item{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f1f3;font-size:13px}
+.order-item:last-child{border-bottom:none}
+.order-item-left{display:flex;align-items:center;gap:6px;flex:1;min-width:0}
+.order-item-qty{font-weight:700;color:#2596ff;min-width:24px}
+.order-item-name{color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.order-item-spec{font-size:11px;color:#9aa0a8;margin-left:4px}
+.order-item-price{font-weight:700;color:#1a1a2e;font-family:monospace;font-size:13px}
+.order-divider{height:1px;background:linear-gradient(to right,transparent,#e0e2e6,transparent);margin:4px 16px}
+.order-total-box{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;font-size:14px}
+.order-total-box .lbl{color:#6b7280;font-weight:500}
+.order-total-box .val{color:#2596ff;font-size:20px;font-weight:800;font-family:monospace}
 
-/* ========== CONFIRMATION MODAL ========== */
-.confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:400;display:none;justify-content:center;align-items:center;padding:20px;backdrop-filter:blur(4px)}
+/* Discount bar */
+.discount-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:#f0fff0;border-top:1px solid #e0f0e0;border-bottom:1px solid #e0f0e0;font-size:12px;margin:4px 0}
+.discount-bar .left{display:flex;align-items:center;gap:5px;color:#1a7a3a;font-weight:500}
+.discount-bar .left .check{color:#1bc47d;font-size:14px}
+.discount-bar .terms{color:#9aa0a8;font-size:10px;cursor:pointer;text-decoration:underline}
+
+/* Action area */
+.order-action-wrap{padding:10px 16px 0}
+.opt-out{text-align:center;font-size:11px;color:#9aa0a8;margin-bottom:8px;cursor:pointer}
+.opt-out:hover{color:#ff4757}
+.btn-checkout{width:100%;padding:14px;border-radius:12px;border:none;background:linear-gradient(135deg,#2596ff,#1a6bb5);color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px;box-shadow:0 4px 16px rgba(37,150,255,.3)}
+.btn-checkout:hover{box-shadow:0 6px 24px rgba(37,150,255,.4);transform:translateY(-1px)}
+.btn-checkout:active{transform:scale(.98)}
+
+/* ===== CONFIRMATION ===== */
+.confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:400;display:none;justify-content:center;align-items:center;padding:20px;backdrop-filter:blur(6px)}
 .confirm-overlay.open{display:flex}
-.confirm-modal{background:#fff;border-radius:18px;width:100%;max-width:420px;padding:32px 24px 24px;text-align:center;animation:modalIn .3s cubic-bezier(.4,0,.2,1);box-shadow:0 20px 60px rgba(0,0,0,.12)}
-.confirm-icon{font-size:48px;margin-bottom:10px}
-.confirm-modal h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.confirm-modal{background:#fff;border-radius:20px;width:100%;max-width:400px;padding:32px 24px 24px;text-align:center;animation:modalIn .3s cubic-bezier(.4,0,.2,1);box-shadow:0 24px 80px rgba(0,0,0,.18)}
+.confirm-icon{font-size:52px;margin-bottom:12px}
+.confirm-modal h3{font-size:20px;font-weight:800;margin-bottom:6px}
 .confirm-modal p{font-size:13px;color:#6b7280;line-height:1.6}
-.confirm-done{margin-top:16px;padding:11px 32px;border-radius:10px;border:none;background:#2596ff;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
-.confirm-done:hover{background:#1a7fe8}
+.confirm-done{margin-top:18px;padding:12px 40px;border-radius:12px;border:none;background:linear-gradient(135deg,#2596ff,#1a6bb5);color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s}
+.confirm-done:hover{box-shadow:0 4px 12px rgba(37,150,255,.3)}
 
-/* ========== TOAST ========== */
+/* ===== TOAST ===== */
 .toast-container{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;display:flex;flex-direction:column;gap:6px;align-items:center;pointer-events:none}
-.toast{background:#1a1a2e;color:#fff;padding:10px 22px;border-radius:14px;font-size:13px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,.12);opacity:0;transform:translateY(-10px) scale(.95);transition:all .25s cubic-bezier(.4,0,.2,1);pointer-events:auto;white-space:nowrap;max-width:90vw}
+.toast{background:#1a1a2e;color:#fff;padding:10px 22px;border-radius:14px;font-size:13px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,.12);opacity:0;transform:translateY(-10px) scale(.95);transition:all .25s;pointer-events:auto;white-space:nowrap;max-width:90vw}
 .toast.show{opacity:1;transform:translateY(0) scale(1)}
 .toast.success{background:#1bc47d}
 .toast.info{background:#2596ff}
 
-/* ========== FOOTER ========== */
+/* ===== FOOTER ===== */
 .footer{text-align:center;padding:28px 16px 20px;max-width:820px;margin:20px auto 0;border-top:1px solid #e8eaed;font-size:11px;color:#9aa0a8;line-height:1.8}
 .footer strong{color:#5f6368}
-.footer .divider{color:#ddd;margin:0 6px}
 .footer .version{font-size:10px;color:#c4c7cc;margin-top:8px}
 
-/* ========== RESPONSIVE ========== */
+/* ===== RESPONSIVE ===== */
 @media(max-width:640px){
   .header-inner{padding:20px 14px 16px;flex-wrap:wrap;gap:10px}
   .header-logo{width:36px;height:36px;font-size:15px}
   .header-text h1{font-size:16px}
-  .header-badge{padding:4px 10px}
-  .header-badge .val{font-size:11px}
-  .header-trust{gap:10px;padding:8px 14px}
   .prod-row{padding:10px 12px;gap:6px}
   .prod-name{font-size:13px}
-  .prod-price{font-size:13px}
   .var-row{padding:7px 12px 7px 28px;font-size:12px}
-  .cart-float{bottom:80px;right:14px;width:46px;height:46px;font-size:17px}
-  .order-modal{padding:20px 16px}
+  .cart-bar{padding:8px 12px}
+  .countdown-time{font-size:36px}
 }
 </style>
 </head>
 <body>
 
-<div class="top-bar">⚗️ Research Use Only · Professional Grade Peptides · Not for Human Consumption</div>
+<div class="top-bar">⚗️ Research Use Only · Professional Grade · Not for Human Consumption</div>
 
 <!-- Header -->
 <div class="header">
@@ -239,7 +221,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
   </div>
 </div>
 
-<!-- Filters -->
+<!-- Filter -->
 <div class="filter-wrap">
   <div class="filter" id="filterBar">
     <button class="filter-btn active" data-cat="all" onclick="setCat('all')">All</button>
@@ -253,26 +235,29 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
   </div>
 </div>
 
+<!-- Results -->
 <div class="results-count" id="resultsCount"></div>
 
-<!-- Product list -->
+<!-- Products -->
 <div class="list-wrap">
   <div class="list-scroll" id="productList"></div>
 </div>
 
-<!-- Float cart button -->
-<button class="cart-float" id="cartFloat" onclick="toggleCart()">
-  🛒<span class="badge" id="floatBadge">0</span>
-</button>
+<!-- Footer -->
+<div class="footer">
+  <strong>Premium Peptide</strong> · Professional Research Grade<br>
+  All prices in USD · Minimum order: 1 box per product<br>
+  <div class="version">v1.0 · Built with ❤️</div>
+</div>
 
-<!-- Bottom cart bar -->
-<div class="cart-bar" id="cartBar">
+<!-- Cart bar -->
+<div class="cart-bar" id="cartBar" onclick="toggleCart()" style="cursor:pointer">
   <div class="cart-info">
     🛒 <strong id="cartSummary">0</strong> items
     <span class="sep">·</span>
     <span id="cartTotalBar">$0</span>
   </div>
-  <button class="view-cart" onclick="toggleCart()">View Cart →</button>
+  <button class="view-cart" onclick="event.stopPropagation();toggleCart()">Checkout →</button>
 </div>
 
 <!-- Cart drawer -->
@@ -282,51 +267,73 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
       <h3>Shopping Cart <span id="cartCountLabel"></span></h3>
       <button onclick="toggleCart()">✕</button>
     </div>
-    <div class="cart-items" id="cartItems">
-      <div class="cart-empty"><div class="empty-icon">🛒</div>Your cart is empty</div>
-    </div>
+    <div class="cart-items" id="cartItems"></div>
     <div class="cart-ftr">
       <div class="cart-total">
         <span>Total</span>
         <span class="total-price" id="cartTotalDrawer">$0</span>
       </div>
       <div class="cart-actions">
-        <button class="btn-primary" onclick="openOrderForm()">📝 Submit Order</button>
+        <button class="btn-primary" onclick="openCheckout()">📦 Proceed to Checkout</button>
         <button class="btn-secondary" onclick="clearCart()">Clear</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Order form modal -->
-<div class="order-overlay" id="orderOverlay" onclick="if(event.target===this)closeOrderForm()">
+<!-- ═══ CHECKOUT MODAL — Mobile App Style ═══ -->
+<div class="order-overlay" id="orderOverlay" onclick="if(event.target===this)closeCheckout()">
   <div class="order-modal">
-    <h2>📝 Submit Order</h2>
-    <p class="sub">Fill in your contact info and review your items</p>
-    <form class="order-form" id="orderForm" onsubmit="submitOrder(event)">
-      <label>👤 Name *</label>
-      <input type="text" id="orderName" placeholder="Your name" required>
-      <label>📞 Phone *</label>
-      <input type="tel" id="orderPhone" placeholder="Phone number with country code" required>
-      <label>📍 Address</label>
-      <textarea id="orderAddress" placeholder="Shipping address (optional)" rows="2"></textarea>
-      <div style="margin-top:12px;font-size:12px;font-weight:600;color:#1a1a2e">📦 Order Items</div>
-      <div class="order-summary-box" id="orderSummaryBox"></div>
-      <div class="order-submit-wrap">
-        <button type="submit" class="order-submit">✅ Confirm Order</button>
-        <button type="button" class="order-cancel" onclick="closeOrderForm()">Cancel</button>
+
+    <!-- Urgency banner -->
+    <div class="urgency-banner">
+      <span class="icon">⏰</span>
+      <span>Hurry! Your discount is about to expire!</span>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-card">
+      <div class="countdown-label">Limited Time Offer</div>
+      <div class="countdown-time" id="countdownDisplay">14:59</div>
+      <div class="countdown-sub">Complete your order within 15 minutes to secure best pricing</div>
+    </div>
+
+    <!-- Order items -->
+    <div class="order-items-wrap" id="orderItemsWrap"></div>
+
+    <!-- Discount bar -->
+    <div class="discount-bar">
+      <div class="left">
+        <span class="check">✓</span>
+        <span>Limited time · <strong>Free shipping</strong> on all orders</span>
       </div>
-    </form>
+      <span class="terms" onclick="showToast('Free shipping applied automatically at checkout','info')">Details</span>
+    </div>
+
+    <!-- Total -->
+    <div class="order-total-box">
+      <span class="lbl">Order Total</span>
+      <span class="val" id="checkoutTotal">$0</span>
+    </div>
+
+    <!-- Action -->
+    <div class="order-action-wrap">
+      <div class="opt-out" onclick="closeCheckout()">I'll pass on this offer →</div>
+      <button class="btn-checkout" onclick="completeOrder()">
+        ✅ Complete Order &bull; Pay Later
+      </button>
+    </div>
+
   </div>
 </div>
 
 <!-- Confirmation modal -->
 <div class="confirm-overlay" id="confirmOverlay" onclick="if(event.target===this)closeConfirm()">
   <div class="confirm-modal">
-    <div class="confirm-icon">✅</div>
-    <h3>Order Submitted!</h3>
-    <p id="confirmText">Your order has been received. We will contact you shortly.</p>
-    <button class="confirm-done" onclick="closeConfirm()">Done</button>
+    <div class="confirm-icon">🎉</div>
+    <h3>Order Placed!</h3>
+    <p id="confirmText">Your order has been received. We'll contact you to confirm shipping and payment details.</p>
+    <button class="confirm-done" onclick="closeConfirm()">Done ✓</button>
   </div>
 </div>
 
@@ -334,18 +341,11 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 <div class="toast-container" id="toastContainer"></div>
 
 <script>
-// ═════════════════════════════════════════════════
-// PRODUCT DATA — Complete from product image
-// ═════════════════════════════════════════════════
-const DOT_COLORS={
-  glp1:"#258aff",gh:"#9955dd",repair:"#33cc88",
-  antiage:"#ff9933",skincare:"#e644aa",supplies:"#888888",research:"#33cccc"
-};
-const CAT_NAMES={
-  glp1:"💉 GLP-1",gh:"💪 HGH",repair:"🔧 Repair",
-  antiage:"⏳ Anti-Aging",skincare:"💎 Skincare",supplies:"🧪 Supplies",research:"📋 Other"
-};
-
+// ══════════════════════════════════════════════════════
+// PRODUCT DATA
+// ══════════════════════════════════════════════════════
+const DOT_COLORS={glp1:"#258aff",gh:"#9955dd",repair:"#33cc88",antiage:"#ff9933",skincare:"#e644aa",supplies:"#888888",research:"#33cccc"};
+const CAT_NAMES={glp1:"💉 GLP-1",gh:"💪 HGH",repair:"🔧 Repair",antiage:"⏳ Anti-Aging",skincare:"💎 Skincare",supplies:"🧪 Supplies",research:"📋 Other"};
 const products=[
   // ── GLP-1 / Weight Loss ──
   {code:"SM5", name:"Semaglutide", spec:"5mg×10vials", price:31, cat:"glp1"},
@@ -385,12 +385,11 @@ const products=[
   {code:"Dulaglutide",name:"Dulaglutide",spec:"5mg×10vials",price:148,cat:"glp1"},
   {code:"Dulaglutide",name:"Dulaglutide",spec:"10mg×10vials",price:260,cat:"glp1"},
   {code:"Mazdutide",name:"Mazdutide",  spec:"10mg×10vials",price:220,cat:"glp1"},
-
   // ── HGH / Growth ──
   {code:"CD5", name:"CJC-1295 w/ DAC",spec:"5mg×10vials", price:153,cat:"gh"},
   {code:"CND5",name:"CJC-1295 w/o DAC",spec:"5mg×10vials",price:85, cat:"gh"},
   {code:"CND10",name:"CJC-1295 w/o DAC",spec:"10mg×10vials",price:136,cat:"gh"},
-  {code:"CP10",name:"CJC-1295 Without DAC 5mg+IPA 5mg",spec:"10mg×10vials",price:106,cat:"gh"},
+  {code:"CP10",name:"CJC-1295 w/o DAC 5mg+IPA 5mg",spec:"10mg×10vials",price:106,cat:"gh"},
   {code:"G65", name:"GHRP-6", spec:"5mg×10vials", price:31, cat:"gh"},
   {code:"G610",name:"GHRP-6", spec:"10mg×10vials",price:49, cat:"gh"},
   {code:"G25", name:"GHRP-2", spec:"5mg×10vials", price:31, cat:"gh"},
@@ -408,7 +407,6 @@ const products=[
   {code:"IGD", name:"IGF-DES", spec:"2mg×10vials",  price:50, cat:"gh"},
   {code:"PMF", name:"PEG MGF",  spec:"2mg×10vials",  price:83, cat:"gh"},
   {code:"FMP2",name:"PEG-MGF",  spec:"2mg×10vials",  price:82, cat:"gh"},
-
   // ── Repair / Recovery ──
   {code:"BB10",name:"BPC157+TB500 (5+5)",spec:"10mg×10vials",price:89, cat:"repair"},
   {code:"BB20",name:"BPC157+TB500 (10+10)",spec:"20mg×10vials",price:165,cat:"repair"},
@@ -431,7 +429,6 @@ const products=[
   {code:"BC10",name:"BPC 157",spec:"10mg×10vials",price:64, cat:"repair"},
   {code:"BT5", name:"TB500 (Thymosin B4)",spec:"5mg×10vials",price:64, cat:"repair"},
   {code:"BT10",name:"TB500 (Thymosin B4)",spec:"10mg×10vials",price:132,cat:"repair"},
-
   // ── Anti-Aging ──
   {code:"NJ100", name:"NAD+",spec:"100mg×10vials", price:33, cat:"antiage"},
   {code:"NJ500", name:"NAD+",spec:"500mg×10vials", price:59, cat:"antiage"},
@@ -453,14 +450,12 @@ const products=[
   {code:"ET10", name:"Epithalon",spec:"10mg×10vials",price:42, cat:"antiage"},
   {code:"ET50", name:"Epithalon",spec:"50mg×10vials",price:132,cat:"antiage"},
   {code:"Frag 17-23",name:"Frag 17-23",spec:"10mg×10vials",price:73, cat:"antiage"},
-
   // ── Skincare ──
   {code:"NP810",name:"SNAP-8",spec:"2mg×10vials",price:42, cat:"skincare"},
   {code:"MX10", name:"Matrixyl",spec:"10mg×10vials",price:35, cat:"skincare"},
   {code:"MT1",  name:"MT-1",spec:"10mg×10vials",price:42, cat:"skincare"},
   {code:"ML10", name:"MT-2 (Melanotan 2)",spec:"10mg×10vials",price:47, cat:"skincare"},
   {code:"MT10", name:"Melatonin",spec:"10mg×10vials",price:42, cat:"skincare"},
-
   // ── Supplies ──
   {code:"WA3", name:"BAC WATER",spec:"3ml×10vials", price:7, cat:"supplies"},
   {code:"WA10",name:"BAC WATER",spec:"10ml×10vials",price:9, cat:"supplies"},
@@ -468,7 +463,6 @@ const products=[
   {code:"BA10",name:"BA WATER",spec:"10ml×10vials",price:9, cat:"supplies"},
   {code:"AA3", name:"Acetic Acid",spec:"3ml×10vials", price:7, cat:"supplies"},
   {code:"AA10",name:"Acetic Acid",spec:"10ml×10vials",price:9, cat:"supplies"},
-
   // ── Other Research ──
   {code:"AP5", name:"Adipotide",spec:"5mg×10vials",  price:165,cat:"research"},
   {code:"AP10",name:"Adipotide",spec:"10mg×10vials",price:211,cat:"research"},
@@ -512,23 +506,18 @@ const products=[
   {code:"GND2",name:"Gonadorelin Acetate",spec:"2mg×10vials",price:35, cat:"research"},
 ];
 
-// ═════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════
 // STATE
-// ═════════════════════════════════════════════════
-let cart = {};
-let currentCat = "all";
+// ══════════════════════════════════════════════════════
+let cart={};
+let currentCat="all";
+let expandedGroups=new Set();
+let countdownTimer=null;
+let countdownRemaining=900; // 15 minutes in seconds
 
-// Track which product groups are expanded: key = group name
-let expandedGroups = new Set();
-
-(function(){
-  try{const d=JSON.parse(localStorage.getItem("peptide_cart")||"{}");cart=d}catch(e){}
-})();
+(function(){try{const d=JSON.parse(localStorage.getItem("peptide_cart")||"{}");cart=d}catch(e){}})();
 function save(){localStorage.setItem("peptide_cart",JSON.stringify(cart))}
 
-// ═════════════════════════════════════════════════
-// GROUPING
-// ═════════════════════════════════════════════════
 function groupProducts(list){
   const map={};
   list.forEach(p=>{
@@ -539,46 +528,28 @@ function groupProducts(list){
   return Object.values(map);
 }
 
-// ═════════════════════════════════════════════════
-// RENDER — preserves expanded state
-// ═════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════════════════
 function render(){
   const el=document.getElementById("productList");
   let items=products;
   if(currentCat!=="all") items=items.filter(p=>p.cat===currentCat);
   const s=document.getElementById("searchInput").value.trim().toLowerCase();
   if(s) items=items.filter(p=>p.name.toLowerCase().includes(s)||p.code.toLowerCase().includes(s));
-  
-  // Save which groups are visible (so we don't re-expand hidden ones)
-  // expandedGroups tracks groups the user has manually opened
-  
   if(!items.length){
     el.innerHTML='<div style="text-align:center;padding:80px 20px"><div style="font-size:36px;margin-bottom:12px;opacity:.4">🔍</div><div style="font-size:14px;color:#888;font-weight:500">No products found</div><div style="font-size:12px;color:#bbb;margin-top:4px">Try a different search or clear filters</div></div>';
-    document.getElementById("resultsCount").textContent="0 products";
-    return;
+    document.getElementById("resultsCount").textContent="0 products";return;
   }
   const groups=groupProducts(items);
-  const totalUnique=groups.length;
-  document.getElementById("resultsCount").textContent=items.length+" variants · "+totalUnique+" products";
-
+  document.getElementById("resultsCount").textContent=items.length+" variants · "+groups.length+" products";
   el.innerHTML=groups.map(g=>{
     const dot=DOT_COLORS[g.cat]||"#888";
     const catTag=CAT_NAMES[g.cat]||g.cat;
     const minP=Math.min(...g.items.map(p=>p.price));
     const maxP=Math.max(...g.items.map(p=>p.price));
-    const priceStr=maxP>minP?`$${minP}–$${maxP}`:`$${minP}`;
+    const range=maxP>minP?`$${minP}–$${maxP}`:`$${minP}`;
     const isExpanded=expandedGroups.has(g.name);
-
-    const variantsHtml=g.items.map(p=>{
-      const inc=!!cart[p.code],qty=cart[p.code]||0;
-      return `<div class="var-row">
-        <span class="var-code">${p.code}</span>
-        <span class="var-spec">${p.spec}</span>
-        <span class="var-price"><span class="usd">$</span>${p.price}</span>
-        <button class="var-add${inc?' in-cart':''}" onclick="addToCart('${p.code.replace(/'/g,"\\'")}')">${inc?'✓ '+qty:'+ Add'}</button>
-      </div>`;
-    }).join("");
-
     return `<div class="prod-group">
       <div class="prod-row" onclick="toggleGroup(this,'${g.name.replace(/'/g,"\\'")}')">
         <span class="prod-dot" style="background:${dot};color:${dot}"></span>
@@ -587,10 +558,17 @@ function render(){
           ${g.items.length>1?`<span class="prod-count">${g.items.length}</span>`:''}
           <span class="prod-cat-tag">${catTag}</span>
         </div>
-        <span class="prod-price">${priceStr}</span>
+        <span class="prod-range">${range}</span>
         <span class="prod-arrow${isExpanded?' open':''}">▼</span>
       </div>
-      <div class="prod-variants${isExpanded?' open':''}">${variantsHtml}</div>
+      <div class="prod-variants${isExpanded?' open':''}">${
+        g.items.map(p=>`<div class="var-row">
+          <span class="var-code">${p.code}</span>
+          <span class="var-spec">${p.spec}</span>
+          <span class="var-price">$${p.price}</span>
+          <button class="var-add ${cart[p.code]?'done':'add'}" onclick="addToCart('${p.code.replace(/'/g,"\\'")}')">${cart[p.code]?'✓ '+cart[p.code]:'+ Add'}</button>
+        </div>`).join("")
+      }</div>
     </div>`;
   }).join("");
 }
@@ -599,15 +577,8 @@ function toggleGroup(row,groupName){
   const variants=row.nextElementSibling;
   const arrow=row.querySelector('.prod-arrow');
   const isOpen=variants.classList.contains('open');
-  if(isOpen){
-    variants.classList.remove('open');
-    arrow.classList.remove('open');
-    expandedGroups.delete(groupName);
-  }else{
-    variants.classList.add('open');
-    arrow.classList.add('open');
-    expandedGroups.add(groupName);
-  }
+  if(isOpen){variants.classList.remove('open');arrow.classList.remove('open');expandedGroups.delete(groupName)}
+  else{variants.classList.add('open');arrow.classList.add('open');expandedGroups.add(groupName)}
 }
 
 function setCat(cat){
@@ -616,43 +587,30 @@ function setCat(cat){
   render();
 }
 
-// ═════════════════════════════════════════════════
-// CART — preserves expanded state
-// ═════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════
+// CART
+// ══════════════════════════════════════════════════════
 function addToCart(code){
   if(!cart[code]) cart[code]=0;
-  cart[code]++;
-  save();
-  updateUI();
-  renderCart();
-  // Re-render to update buttons — but DON'T collapse anything
-  render();
+  cart[code]++;save();updateUI();renderCart();
   const p=products.find(x=>x.code===code);
   showToast("+1 "+p.name+(p.spec?" · "+p.spec:""),'success');
+  render(); // keeps expanded state intact
 }
 
 function removeFromCart(code){
   if(!cart[code]) return;
-  cart[code]--;
-  if(cart[code]<=0) delete cart[code];
+  cart[code]--;if(cart[code]<=0) delete cart[code];
   save();updateUI();renderCart();render();
 }
 
-function clearCart(){
-  if(!Object.keys(cart).length) return;
-  cart={};save();updateUI();renderCart();render();showToast("Cart cleared");
-}
+function clearCart(){cart={};save();updateUI();renderCart();render();showToast("Cart cleared")}
 function totalCount(){return Object.values(cart).reduce((a,b)=>a+b,0)}
 function totalPrice(){return Object.entries(cart).reduce((s,[c,q])=>s+q*(products.find(p=>p.code===c)?.price||0),0)}
 function itemCount(){return Object.keys(cart).length}
 
 function updateUI(){
-  const n=totalCount();
-  const t=totalPrice();
-  const fb=document.getElementById("cartFloat");
-  const badge=document.getElementById("floatBadge");
-  if(n>0){fb.classList.add("visible");badge.textContent=n}
-  else{fb.classList.remove("visible")}
+  const n=totalCount(),t=totalPrice();
   const bar=document.getElementById("cartBar");
   bar.style.display=n>0?"flex":"none";
   document.getElementById("cartSummary").textContent=n;
@@ -667,7 +625,7 @@ function renderCart(){
   if(!items.length){el.innerHTML='<div class="cart-empty"><div class="empty-icon">🛒</div>Your cart is empty</div>';return}
   el.innerHTML=items.map(([c,q])=>{
     const p=products.find(x=>x.code===c);
-    if(!p)return"";
+    if(!p) return"";
     return `<div class="cart-item">
       <div class="cart-item-info">
         <div class="cart-item-name">${p.name}</div>
@@ -689,69 +647,77 @@ function toggleCart(){
   renderCart();o.classList.add("open");
 }
 
-// ═════════════════════════════════════════════════
-// ORDER — On-Page Form (No WhatsApp)
-// ═════════════════════════════════════════════════
-function openOrderForm(){
+// ══════════════════════════════════════════════════════
+// CHECKOUT — Mobile App Style (No Form!)
+// ══════════════════════════════════════════════════════
+function openCheckout(){
   const items=Object.entries(cart);
   if(!items.length){showToast("Cart is empty");return}
   document.getElementById("cartOverlay").classList.remove("open");
   
-  // Build summary
-  const box=document.getElementById("orderSummaryBox");
-  box.innerHTML=items.map(([c,q],i)=>{
+  // Build order items display
+  const wrap=document.getElementById("orderItemsWrap");
+  wrap.innerHTML=items.map(([c,q])=>{
     const p=products.find(x=>x.code===c);
-    if(!p)return"";
-    return `<div class="order-line">${i+1}. ${p.name} (#${p.code}) — ${p.spec} × ${q} = $${q*p.price}</div>`;
-  }).join("")+
-  `<div class="order-total-line">Total: $${totalPrice()} (${totalCount()} boxes)</div>`;
+    if(!p) return"";
+    return `<div class="order-item">
+      <div class="order-item-left">
+        <span class="order-item-qty">×${q}</span>
+        <span class="order-item-name">${p.name}</span>
+        <span class="order-item-spec">${p.spec}</span>
+      </div>
+      <span class="order-item-price">$${q*p.price}</span>
+    </div>`;
+  }).join("");
   
-  // Clear previous form data
-  document.getElementById("orderForm").reset();
+  document.getElementById("checkoutTotal").textContent="$"+totalPrice();
+  
+  // Start countdown
+  countdownRemaining=900;
+  updateCountdown();
+  if(countdownTimer) clearInterval(countdownTimer);
+  countdownTimer=setInterval(()=>{
+    countdownRemaining--;
+    if(countdownRemaining<=0){clearInterval(countdownTimer);countdownTimer=null}
+    updateCountdown();
+  },1000);
+  
   document.getElementById("orderOverlay").classList.add("open");
 }
-function closeOrderForm(){document.getElementById("orderOverlay").classList.remove("open")}
+
+function closeCheckout(){
+  document.getElementById("orderOverlay").classList.remove("open");
+  if(countdownTimer){clearInterval(countdownTimer);countdownTimer=null}
+}
+
+function updateCountdown(){
+  const m=Math.floor(countdownRemaining/60);
+  const s=countdownRemaining%60;
+  document.getElementById("countdownDisplay").textContent=
+    String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
+}
+
 function closeConfirm(){document.getElementById("confirmOverlay").classList.remove("open")}
 
-function submitOrder(e){
-  e.preventDefault();
-  const name=document.getElementById("orderName").value.trim();
-  const phone=document.getElementById("orderPhone").value.trim();
-  const address=document.getElementById("orderAddress").value.trim();
-  if(!name||!phone){showToast("Please fill in name and phone");return}
-  
-  // Build order text for reference
-  const items=Object.entries(cart);
-  let orderStr="━━━ NEW ORDER ━━━\n\n";
-  items.forEach(([c,q],i)=>{
-    const p=products.find(x=>x.code===c);
-    if(!p)return;
-    orderStr+=`${i+1}. ${p.name} (#${p.code})\n   ${p.spec} × ${q} = $${q*p.price}\n\n`;
-  });
-  orderStr+=`──────────────────\nTOTAL: $${totalPrice()}\nITEMS: ${totalCount()} boxes\n──────────────────\n\n`;
-  orderStr+=`👤 ${name}\n📞 ${phone}\n📍 ${address||"Not provided"}`;
-  
-  // Save order to localStorage history
+function completeOrder(){
+  // Save order to history
   const history=JSON.parse(localStorage.getItem("peptide_orders")||"[]");
-  history.push({date:new Date().toISOString(),name,phone,address,cart:{...cart},total:totalPrice(),items:totalCount()});
+  history.push({date:new Date().toISOString(),cart:{...cart},total:totalPrice(),items:totalCount()});
   localStorage.setItem("peptide_orders",JSON.stringify(history));
   
-  // Log to console (for now; can be replaced with server submission)
-  console.log("ORDER SUBMITTED:");
-  console.log(orderStr);
-  
-  closeOrderForm();
+  closeCheckout();
   clearCart();
+  
   document.getElementById("confirmText").innerHTML=
-    `Your order has been received!<br><br>`+
-    `<strong>${name}</strong><br>📞 ${phone}<br>📍 ${address||"Not provided"}<br><br>`+
-    `We will contact you shortly to confirm.`;
+    "Your order has been received and saved.<br><br>"+
+    "<strong>"+totalCount()+" boxes · $"+totalPrice()+"</strong><br><br>"+
+    "We will contact you shortly to confirm shipping and payment details.";
   document.getElementById("confirmOverlay").classList.add("open");
 }
 
-// ═════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════
 // TOAST
-// ═════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════
 function showToast(msg,type){
   const c=document.getElementById("toastContainer");
   const t=document.createElement("div");
@@ -765,9 +731,9 @@ function showToast(msg,type){
   },type==='success'?2500:1800);
 }
 
-// ═════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════
 // INIT
-// ═════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════
 render();updateUI();
 </script>
 </body>
