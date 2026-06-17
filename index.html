@@ -179,22 +179,19 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .btn-checkout:hover{box-shadow:0 6px 24px rgba(37,150,255,.4);transform:translateY(-1px)}
 .btn-checkout:active{transform:scale(.98)}
 
-/* ===== REFERENCE IMAGE STYLE (orange theme) ===== */
-.order-modal{position:relative;border-top:3px solid #ff8c00}
-.ref-header{padding:16px 16px 0;font-size:16px;font-weight:800;color:#1a1a2e;letter-spacing:.3px;text-transform:uppercase;text-align:left}
-.ref-countdown-wrap{background:#fff3e0;margin:10px 16px 0;border-radius:14px;padding:12px 12px 10px;text-align:center}
-.ref-countdown-label{font-size:9px;color:#cc7a00;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1px}
-.ref-countdown-time{font-size:38px;font-weight:800;color:#1a1a2e;font-variant-numeric:tabular-nums;letter-spacing:3px;line-height:1.1;font-family:'SF Mono','Menlo','Consolas',monospace}
-.ref-offer{display:flex;align-items:flex-start;gap:10px;margin:12px 16px 0;padding:0}
-.ref-offer-icon{width:22px;height:22px;min-width:22px;border-radius:50%;background:#2596ff;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px}
-.ref-offer-title{font-size:13px;font-weight:600;color:#1a1a2e}
-.ref-offer-sub{font-size:11px;color:#9aa0a8;margin-top:1px}
-.ref-divider{border:none;border-top:1px solid #e8eaed;margin:8px 16px}
-.btn-ref{width:100%;padding:14px;border-radius:14px;border:none;background:#ff8c00;color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(255,140,0,.3);display:flex;align-items:center;justify-content:center;gap:8px}
-.btn-ref:hover{box-shadow:0 6px 24px rgba(255,140,0,.4);transform:translateY(-1px)}
-.btn-ref:active{transform:scale(.98)}
-.ref-disclaimer{text-align:center;font-size:10px;color:#c4c7cc;margin-top:6px;margin-bottom:4px}
-.ref-instruction{font-size:11px;color:#6b7280;padding:4px 16px 0;line-height:1.5;text-align:center}
+/* ===== REFERENCE IMAGE STYLE (red banner + orange button + red box) ===== */
+.order-modal{position:relative;border-radius:14px;overflow:hidden}
+.ref-top-banner{background:#dc2626;color:#fff;padding:10px 16px;font-size:13px;font-weight:700;text-align:center;letter-spacing:.3px}
+.ref-white-box{padding:0 16px 16px}
+.ref-upto-btn{display:inline-block;margin:12px auto 8px;background:linear-gradient(135deg,#ff8c00,#f57c00);color:#fff;font-size:11px;font-weight:800;padding:5px 18px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px}
+.ref-countdown{text-align:center;font-size:40px;font-weight:800;color:#1a1a2e;font-variant-numeric:tabular-nums;letter-spacing:4px;line-height:1.1;font-family:'SF Mono','Menlo','Consolas',monospace;margin:4px 0 12px}
+.ref-red-box{border:1.5px solid #ef4444;border-radius:12px;padding:12px 14px;display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.ref-red-icon{width:22px;height:22px;min-width:22px;border-radius:50%;border:1.5px solid #d1d5db;color:#6b7280;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px}
+.ref-red-title{font-size:13px;font-weight:700;color:#1a1a2e;line-height:1.3}
+.ref-red-sub{font-size:11px;color:#6b7280;margin-top:2px}
+.ref-btn-blue{width:100%;padding:13px;border-radius:12px;border:none;background:#2596ff;color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(37,150,255,.3);display:flex;align-items:center;justify-content:center;gap:8px}
+.ref-btn-blue:hover{box-shadow:0 6px 24px rgba(37,150,255,.4);transform:translateY(-1px)}
+.ref-btn-blue:active{transform:scale(.98)}
 
 /* ===== TOAST ===== */
 .toast-container{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;display:flex;flex-direction:column;gap:6px;align-items:center;pointer-events:none}
@@ -354,41 +351,44 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 <div class="order-overlay" id="confirmOverlay" onclick="if(event.target===this)closeConfirmPanel()">
   <div class="order-modal">
 
-    <!-- Header -->
-    <div class="ref-header">Hurry! Your Discount Is Ticking</div>
+    <!-- Red top banner -->
+    <div class="ref-top-banner">Hurry! Your Discount Is Ticking</div>
 
-    <!-- Countdown -->
-    <div class="ref-countdown-wrap">
-      <div class="ref-countdown-label">OVER IN:</div>
-      <div class="ref-countdown-time" id="confirmCountdownDisplay">30:00</div>
-    </div>
+    <!-- White content area -->
+    <div class="ref-white-box">
 
-    <!-- Offer -->
-    <div class="ref-offer">
-      <div class="ref-offer-icon">✓</div>
-      <div class="ref-offer-text">
-        <div class="ref-offer-title">Limited Time Offer 5% OFF</div>
-        <div class="ref-offer-sub">Discount will be automatically applied to your order</div>
+      <!-- UPTO 60% OFF button -->
+      <div style="text-align:center"><span class="ref-upto-btn">UPTO 60% OFF</span></div>
+
+      <!-- Countdown -->
+      <div class="ref-countdown" id="confirmCountdownDisplay">30:00</div>
+
+      <!-- Red-bordered box -->
+      <div class="ref-red-box">
+        <div class="ref-red-icon">⏰</div>
+        <div>
+          <div class="ref-red-title">Limited Time Offer: 5% OFF</div>
+          <div class="ref-red-sub">Discount will be automatically applied to your order</div>
+        </div>
       </div>
-    </div>
 
-    <!-- Order items (products with qty & specs) -->
-    <div class="order-items-wrap" id="confirmOrderItems"></div>
+      <!-- Order items (products with qty & specs) -->
+      <div class="order-items-wrap" id="confirmOrderItems" style="padding:0 0 6px;max-height:130px"></div>
 
-    <!-- Total -->
-    <div class="order-total-box">
-      <span class="lbl">Order Total</span>
-      <span class="val" id="confirmTotalPrice">$0</span>
-    </div>
+      <!-- Total -->
+      <div class="order-total-box" style="padding:4px 0 6px">
+        <span class="lbl">Order Total</span>
+        <span class="val" id="confirmTotalPrice">$0</span>
+      </div>
 
-    <div class="ref-instruction">Please copy the order list and send it to your dedicated customer service representative ASAP</div>
+      <div class="ref-instruction" style="padding:0 0 10px;text-align:center;font-size:11px;color:#6b7280">
+        Please copy the order list and send it to<br>
+        your dedicated customer service representative ASAP
+      </div>
 
-    <hr class="ref-divider">
+      <!-- Blue button -->
+      <button class="ref-btn-blue" onclick="copyOrder()">📋 Copy Order List</button>
 
-    <!-- Action button -->
-    <div class="order-action-wrap">
-      <button class="btn-ref" onclick="copyOrder()">🛒 Easy Order Now</button>
-      <div class="ref-disclaimer">*Offer valid for limited period</div>
     </div>
 
   </div>
