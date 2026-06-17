@@ -110,9 +110,51 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .btn-secondary:hover{border-color:#bbb;color:#1a1a2e}
 
 /* ===== ORDER MODAL — Mobile Checkout Style ===== */
-/* ===== COUNTDOWN BANNER (inside cart) ===== */
-.countdown-bar{background:#ff4757;color:#fff;padding:8px 16px;font-size:11px;font-weight:600;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;flex-shrink:0}
-.countdown-bar .timer{font-family:'SF Mono','Menlo','Consolas',monospace;font-size:13px;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:6px;margin:0 2px}
+/* ===== CONFIRMATION VIEW (inside cart) ===== */
+.confirm-banner{background:#ff3b30;color:#fff;padding:10px 16px;font-size:12px;font-weight:600;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;flex-shrink:0}
+.confirm-banner .icon{font-size:14px;background:rgba(255,255,255,.2);border-radius:50%;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center}
+.confirm-countdown-card{background:#fff7e6;margin:10px 14px 0;border-radius:12px;padding:14px 12px 12px;text-align:center;border:1px solid #ffe0a0;flex-shrink:0}
+.confirm-countdown-label{font-size:10px;color:#cc8a00;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.confirm-countdown-time{font-size:34px;font-weight:800;color:#1a1a2e;font-variant-numeric:tabular-nums;letter-spacing:3px;line-height:1.1;font-family:'SF Mono','Menlo','Consolas',monospace}
+.confirm-countdown-sub{font-size:10px;color:#aa7000;margin-top:3px;opacity:.8}
+.confirm-discount{display:flex;align-items:center;gap:8px;padding:8px 14px;margin:8px 14px 0;background:#f0fff0;border:1px solid #d4edda;border-radius:10px;flex-shrink:0}
+.confirm-discount .check{width:20px;height:20px;border-radius:50%;background:#1bc47d;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+.confirm-discount .text{font-size:12px;color:#155724;line-height:1.4;text-align:left}
+.confirm-discount .text strong{font-weight:700}
+.confirm-discount .tag{font-size:9px;background:#d4edda;color:#155724;padding:1px 8px;border-radius:10px;margin-left:auto;flex-shrink:0;font-weight:600}
+
+/* ===== CONFIRMATION OVERLAY MODAL ===== */
+.order-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;display:none;justify-content:center;align-items:center;padding:16px;backdrop-filter:blur(6px)}
+.order-overlay.open{display:flex}
+.order-modal{background:#fff;border-radius:20px;width:100%;max-width:400px;padding:0 0 16px;animation:modalIn .3s cubic-bezier(.4,0,.2,1);box-shadow:0 24px 80px rgba(0,0,0,.18);overflow:hidden}
+@keyframes modalIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+.urgency-banner{background:#ff3b30;color:#fff;padding:10px 16px;font-size:12px;font-weight:600;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px}
+.urgency-banner .icon-circle{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.2);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+.countdown-card{background:#fff7e6;margin:12px 16px 0;border-radius:14px;padding:16px 12px 12px;text-align:center;border:1px solid #ffe0a0}
+.countdown-label{font-size:10px;color:#cc8a00;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.countdown-time{font-size:38px;font-weight:800;color:#1a1a2e;font-variant-numeric:tabular-nums;letter-spacing:3px;line-height:1.1;font-family:'SF Mono','Menlo','Consolas',monospace}
+.countdown-sub{font-size:10px;color:#aa7000;margin-top:4px;opacity:.8}
+.order-items-wrap{padding:10px 16px 0;max-height:160px;overflow-y:auto}
+.order-item{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f0f1f3;font-size:12px}
+.order-item:last-child{border-bottom:none}
+.order-item-left{display:flex;align-items:center;gap:5px;flex:1;min-width:0}
+.order-item-qty{font-weight:700;color:#2596ff;min-width:20px;font-size:11px}
+.order-item-name{color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px}
+.order-item-spec{font-size:10px;color:#9aa0a8;margin-left:3px}
+.order-item-price{font-weight:700;color:#1a1a2e;font-family:monospace;font-size:12px}
+.discount-bar{display:flex;align-items:center;gap:8px;padding:8px 16px;margin:8px 16px 0;background:#f0fff0;border:1px solid #d4edda;border-radius:10px}
+.discount-bar .left{display:flex;align-items:center;gap:6px;color:#155724;font-size:12px;line-height:1.4;flex:1}
+.discount-bar .check-icon{width:18px;height:18px;border-radius:50%;background:#1bc47d;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
+.discount-bar .tag-pill{font-size:9px;background:#d4edda;color:#155724;padding:2px 8px;border-radius:10px;font-weight:600;flex-shrink:0}
+.order-total-box{display:flex;justify-content:space-between;align-items:center;padding:10px 16px 4px}
+.order-total-box .lbl{color:#6b7280;font-size:13px;font-weight:500}
+.order-total-box .val{color:#2596ff;font-size:20px;font-weight:800;font-family:monospace}
+.order-action-wrap{padding:6px 16px 0}
+.opt-out{text-align:center;font-size:11px;color:#9aa0a8;margin-bottom:6px;cursor:pointer}
+.opt-out:hover{color:#ff3b30}
+.btn-checkout{width:100%;padding:13px;border-radius:12px;border:none;background:linear-gradient(135deg,#2596ff,#1a6bb5);color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px;box-shadow:0 4px 16px rgba(37,150,255,.3)}
+.btn-checkout:hover{box-shadow:0 6px 24px rgba(37,150,255,.4);transform:translateY(-1px)}
+.btn-checkout:active{transform:scale(.98)}
 
 /* ===== TOAST ===== */
 .toast-container{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;display:flex;flex-direction:column;gap:6px;align-items:center;pointer-events:none}
@@ -219,9 +261,6 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
       <button onclick="toggleCart()">✕</button>
     </div>
     <div class="cart-items" id="cartItems">
-      <div class="countdown-bar" id="countdownBar" style="display:none">
-        ⏰ LIMITED TIME OFFER — <span class="timer" id="countdownDisplay">15:00</span> remaining
-      </div>
       <div id="cartListItems"></div>
       <div class="cart-empty" id="cartEmpty" style="display:none">
         <div class="empty-icon">🛒</div>Your cart is empty
@@ -238,21 +277,52 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
         <button class="btn-secondary" onclick="clearCart()">🗑 Clear All</button>
       </div>
     </div>
-    <!-- Confirmation footer (hidden initially) -->
-    <div class="cart-ftr" id="confirmFooter" style="display:none">
-      <div style="font-size:11px;color:#6b7280;margin-bottom:8px;line-height:1.5;text-align:center">
-        Please copy the order list and send it to<br>
-        your dedicated customer service representative <strong>ASAP</strong>
-      </div>
-      <div class="cart-total" style="margin-bottom:4px">
-        <span>Total</span>
-        <span class="total-price" id="confirmTotal">$0</span>
-      </div>
-      <div class="cart-actions">
-        <button class="btn-primary" id="copyOrderBtn" onclick="copyOrder()">📋 Copy Order List</button>
-        <button class="btn-secondary" onclick="closeConfirmOrder()">Close</button>
-      </div>
+  </div>
+</div>
+
+<!-- ═══ CONFIRMATION OVERLAY — Mobile App Style ═══ -->
+<div class="order-overlay" id="confirmOverlay" onclick="if(event.target===this)closeConfirmPanel()">
+  <div class="order-modal">
+
+    <!-- Urgency banner -->
+    <div class="urgency-banner">
+      <span class="icon-circle">!</span>
+      <span>Hurry! Your discount is about to expire!</span>
     </div>
+
+    <!-- Countdown card -->
+    <div class="countdown-card">
+      <div class="countdown-label">Limited Time Offer</div>
+      <div class="countdown-time" id="confirmCountdownDisplay">15:00</div>
+      <div class="countdown-sub">Complete your order within 15 minutes to secure best pricing</div>
+    </div>
+
+    <!-- Order items -->
+    <div class="order-items-wrap" id="confirmOrderItems"></div>
+
+    <!-- Discount bar -->
+    <div class="discount-bar">
+      <div class="left">
+        <span class="check-icon">✓</span>
+        <span><strong>Limited time:</strong> Free shipping on all orders · 5% off</span>
+      </div>
+      <span class="tag-pill">Limited</span>
+    </div>
+
+    <!-- Total -->
+    <div class="order-total-box">
+      <span class="lbl">Order Total</span>
+      <span class="val" id="confirmTotalPrice">$0</span>
+    </div>
+
+    <!-- Action -->
+    <div class="order-action-wrap">
+      <div class="opt-out" onclick="closeConfirmPanel()">I'll pass on this offer →</div>
+      <button class="btn-checkout" id="copyOrderBtn" onclick="copyOrder()">
+        📋 Copy Order List
+      </button>
+    </div>
+
   </div>
 </div>
 
@@ -593,35 +663,41 @@ function renderCart(){
 function toggleCart(){
   const o=document.getElementById("cartOverlay");
   if(o.classList.contains("open")){
-    // Reset cart view on close
-    document.getElementById("cartFooter").style.display='';
-    document.getElementById("confirmFooter").style.display='none';
-    document.getElementById("countdownBar").style.display='none';
-    if(countdownTimer){clearInterval(countdownTimer);countdownTimer=null}
     o.classList.remove("open");
     return;
   }
   renderCart();
-  document.getElementById("cartFooter").style.display='';
-  document.getElementById("confirmFooter").style.display='none';
-  document.getElementById("countdownBar").style.display='none';
   o.classList.add("open");
 }
 
 // ══════════════════════════════════════════════════════
-// ORDER FLOW (Matches manufacturer-direct.top)
+// CONFIRMATION OVERLAY — Mobile App Style
 // ══════════════════════════════════════════════════════
 function confirmOrder(){
   const items=Object.entries(cart);
   if(!items.length){showToast("Cart is empty");return}
   
-  // Switch footer to confirmation view
-  document.getElementById("cartFooter").style.display='none';
-  document.getElementById("confirmFooter").style.display='';
-  document.getElementById("confirmTotal").textContent="$"+totalPrice();
+  // Close cart drawer, open confirmation overlay
+  document.getElementById("cartOverlay").classList.remove("open");
   
-  // Show countdown
-  document.getElementById("countdownBar").style.display='flex';
+  // Build order items display
+  const wrap=document.getElementById("confirmOrderItems");
+  wrap.innerHTML=items.map(([c,q])=>{
+    const p=products.find(x=>x.code===c);
+    if(!p) return"";
+    return `<div class="order-item">
+      <div class="order-item-left">
+        <span class="order-item-qty">×${q}</span>
+        <span class="order-item-name">${p.name}</span>
+        <span class="order-item-spec">${p.spec}</span>
+      </div>
+      <span class="order-item-price">$${q*p.price}</span>
+    </div>`;
+  }).join("");
+  
+  document.getElementById("confirmTotalPrice").textContent="$"+totalPrice();
+  
+  // Start countdown
   countdownRemaining=900;
   updateCountdown();
   if(countdownTimer) clearInterval(countdownTimer);
@@ -630,20 +706,19 @@ function confirmOrder(){
     if(countdownRemaining<=0){clearInterval(countdownTimer);countdownTimer=null}
     updateCountdown();
   },1000);
+  
+  document.getElementById("confirmOverlay").classList.add("open");
 }
 
-function closeConfirmOrder(){
-  // Back to cart view
-  document.getElementById("cartFooter").style.display='';
-  document.getElementById("confirmFooter").style.display='none';
-  document.getElementById("countdownBar").style.display='none';
+function closeConfirmPanel(){
+  document.getElementById("confirmOverlay").classList.remove("open");
   if(countdownTimer){clearInterval(countdownTimer);countdownTimer=null}
 }
 
 function updateCountdown(){
   const m=Math.floor(countdownRemaining/60);
   const s=countdownRemaining%60;
-  document.getElementById("countdownDisplay").textContent=
+  document.getElementById("confirmCountdownDisplay").textContent=
     String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
 }
 
