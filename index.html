@@ -293,8 +293,8 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
     <!-- Countdown card -->
     <div class="countdown-card">
       <div class="countdown-label">Limited Time Offer</div>
-      <div class="countdown-time" id="confirmCountdownDisplay">15:00</div>
-      <div class="countdown-sub">Complete your order within 15 minutes to secure best pricing</div>
+      <div class="countdown-time" id="confirmCountdownDisplay">30:00</div>
+      <div class="countdown-sub">Complete your order within 30 minutes to secure best pricing</div>
     </div>
 
     <!-- Order items -->
@@ -304,9 +304,15 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
     <div class="discount-bar">
       <div class="left">
         <span class="check-icon">✓</span>
-        <span><strong>Limited time:</strong> Free shipping on all orders · 5% off</span>
+        <span><strong>Limited time:</strong> 5% off</span>
       </div>
       <span class="tag-pill">Limited</span>
+    </div>
+
+    <!-- Instruction -->
+    <div style="font-size:11px;color:#6b7280;padding:6px 16px 0;line-height:1.5;text-align:center;flex-shrink:0">
+      Please copy the order list and send it to<br>
+      your dedicated customer service representative <strong>ASAP</strong>
     </div>
 
     <!-- Total -->
@@ -502,7 +508,7 @@ let cart={};
 let currentCat="all";
 let expandedGroups=new Set();
 let countdownTimer=null;
-let countdownRemaining=900; // 15 minutes in seconds
+let countdownRemaining=1800; // 30 minutes in seconds
 
 (function(){try{const d=JSON.parse(localStorage.getItem("peptide_cart")||"{}");cart=d}catch(e){}})();
 function save(){localStorage.setItem("peptide_cart",JSON.stringify(cart))}
@@ -698,7 +704,7 @@ function confirmOrder(){
   document.getElementById("confirmTotalPrice").textContent="$"+totalPrice();
   
   // Start countdown
-  countdownRemaining=900;
+  countdownRemaining=1800;
   updateCountdown();
   if(countdownTimer) clearInterval(countdownTimer);
   countdownTimer=setInterval(()=>{
