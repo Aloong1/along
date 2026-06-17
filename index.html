@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>VITARA Labs — 优质营养补充剂</title>
+<title>Research Peptides — 高品质科研肽</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -15,44 +15,32 @@
 }
 body{font-family:-apple-system,'Inter','Helvetica Neue','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;padding-bottom:80px;min-height:100vh}
 a{text-decoration:none;color:inherit}
-
-/* HEADER */
 .header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border);max-width:1200px;margin:0 auto;position:sticky;top:0;background:rgba(10,10,15,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);z-index:50}
 .logo{font-size:18px;font-weight:800;letter-spacing:-.5px}
 .logo span{color:var(--accent)}
-.logo small{font-size:11px;font-weight:400;color:var(--text3);margin-left:6px;letter-spacing:0}
+.logo small{font-size:11px;font-weight:400;color:var(--text3);margin-left:6px}
 .nav{display:flex;gap:20px;font-size:12px;color:var(--text3);font-weight:600}
 .nav a:hover{color:var(--text)}
 .cart-btn{background:var(--accent-dim);border:1px solid rgba(108,92,231,.25);border-radius:18px;padding:7px 14px;font-size:11px;color:var(--text);cursor:pointer;display:flex;align-items:center;gap:6px;font-weight:700;transition:all .2s}
 .cart-btn:hover{background:rgba(108,92,231,.25)}
 .cart-btn .count{background:var(--accent);border-radius:50%;width:18px;height:18px;font-size:9px;display:inline-flex;align-items:center;justify-content:center;font-weight:800}
-
-/* HERO */
 .hero{text-align:center;padding:50px 20px 32px;max-width:680px;margin:0 auto}
 .hero h1{font-size:32px;font-weight:800;letter-spacing:-1px;line-height:1.2}
 .hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero p{color:var(--text3);font-size:13px;margin-top:10px;line-height:1.6}
 .badges{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
 .badges span{font-size:10px;color:var(--text3);border:1px solid var(--border);padding:4px 12px;border-radius:10px;font-weight:600}
-
-/* SEARCH */
 .search-wrap{max-width:1200px;margin:0 auto;padding:0 20px 16px}
 .search-wrap input{width:100%;padding:10px 16px;border-radius:24px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);font-size:13px;outline:none;transition:all .2s}
 .search-wrap input::placeholder{color:var(--text3)}
 .search-wrap input:focus{border-color:var(--accent);background:rgba(108,92,231,.06)}
-
-/* FILTER */
 .filter{display:flex;gap:6px;padding:0 20px;max-width:1200px;margin:0 auto 20px;flex-wrap:wrap;overflow-x:auto}
 .filter-btn{padding:7px 16px;border-radius:16px;border:1px solid var(--border);background:transparent;color:var(--text3);font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0}
 .filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
 .filter-btn:hover:not(.active){border-color:var(--border-hover);color:var(--text2)}
-
-/* GRID */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;max-width:1200px;margin:0 auto;padding:0 20px 40px}
-
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;transition:all .3s;position:relative;cursor:pointer}
 .card:hover{border-color:rgba(108,92,231,.3);transform:translateY(-2px);box-shadow:0 8px 32px rgba(108,92,231,.08);background:var(--card-hover)}
-.card .tag{position:absolute;top:10px;right:10px;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 8px;border-radius:5px;background:var(--accent-dim);color:var(--accent2)}
 .card .icon{height:80px;display:flex;align-items:center;justify-content:center;font-size:28px;opacity:.3;margin-bottom:8px}
 .card h3{font-size:14px;font-weight:700;margin-bottom:3px}
 .card .code{font-size:10px;color:var(--text3);font-weight:600;margin-bottom:8px}
@@ -64,20 +52,11 @@ a{text-decoration:none;color:inherit}
 .card .add:hover{background:#5a4bd1;transform:scale(1.02)}
 .card .add:active{transform:scale(.97)}
 .card .add.in-cart{background:var(--green)}
-
-/* FOOTER */
 .footer{text-align:center;padding:24px 20px;border-top:1px solid var(--border);max-width:1200px;margin:0 auto;font-size:11px;color:var(--text3);line-height:1.8}
 .footer strong{color:var(--text2);font-weight:700}
-.footer .social{display:flex;gap:12px;justify-content:center;margin-top:10px}
-.footer .social a{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .2s}
-.footer .social a:hover{border-color:var(--accent);background:var(--accent-dim)}
-
-/* CART FAB */
 .cart-fab{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(108,92,231,.4);z-index:100;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .cart-fab:active{transform:scale(.92)}
 .cart-fab .cart-badge{position:absolute;top:-4px;right:-4px;min-width:22px;height:22px;border-radius:11px;background:var(--red);color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0 5px;border:2px solid var(--bg);display:none}
-
-/* CART DRAWER */
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:none;justify-content:center;align-items:flex-end}
 .cart-overlay.open{display:flex}
 .cart-drawer{background:#12121a;border-radius:20px 20px 0 0;width:100%;max-width:500px;max-height:75vh;display:flex;flex-direction:column;animation:slideUp .3s ease}
@@ -104,8 +83,6 @@ a{text-decoration:none;color:inherit}
 .btn-confirm:active{background:#5a4bd1}
 .btn-clear{padding:12px 16px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text3);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
 .btn-clear:active{background:rgba(255,255,255,.06)}
-
-/* ORDER MODAL */
 .order-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;display:none;justify-content:center;align-items:center;padding:20px}
 .order-overlay.open{display:flex}
 .order-modal{background:#12121a;border-radius:20px;width:100%;max-width:420px;padding:28px 24px 20px;animation:fadeIn .3s ease;border:1px solid var(--border)}
@@ -121,19 +98,13 @@ a{text-decoration:none;color:inherit}
 .copy-btn{width:100%;margin-top:8px;padding:12px;border-radius:12px;border:1px solid var(--border);background:transparent;color:var(--text2);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
 .copy-btn:active{background:rgba(255,255,255,.06)}
 .order-close{margin-top:12px;background:none;border:none;color:var(--text3);font-size:11px;cursor:pointer;width:100%;text-align:center;padding:4px}
-
-/* TOAST */
 .toast{position:fixed;top:16px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:12px 24px;border-radius:20px;font-size:12px;font-weight:700;z-index:500;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;box-shadow:0 8px 32px rgba(0,0,0,.4);white-space:nowrap;max-width:90vw}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(4px)}
-.toast.success{background:#00b894;box-shadow:0 8px 32px rgba(0,184,148,.3)}
+.toast.success{background:#00b894;box-shadow:0 8px 32px rgba(0,0,0,.3)}
 .toast.error{background:#ff7675;box-shadow:0 8px 32px rgba(255,118,117,.3)}
-
-/* EMPTY STATE */
 .empty-state{text-align:center;padding:60px 20px;color:var(--text3);grid-column:1/-1}
 .empty-state .big{font-size:40px;margin-bottom:12px}
 .empty-state p{font-size:13px}
-
-/* RESPONSIVE */
 @media(max-width:600px){
   .grid{grid-template-columns:repeat(2,1fr);gap:10px;padding:0 12px 40px}
   .hero h1{font-size:24px}
@@ -150,69 +121,57 @@ a{text-decoration:none;color:inherit}
 <body>
 
 <div class="header">
-  <div class="logo">✦ <span>VITARA</span> Labs <small>优质营养补充剂</small></div>
+  <div class="logo">✦ <span>Research</span> Peptides</div>
   <div class="nav">
     <a href="#" onclick="setCat('all');return false" style="color:#fff">全部</a>
-    <a href="#" onclick="document.querySelector('.footer').scrollIntoView({behavior:'smooth'});return false">联系我们</a>
+    <a href="#" onclick="document.querySelector('.footer').scrollIntoView({behavior:'smooth'});return false">联系</a>
   </div>
   <button class="cart-btn" onclick="toggleCart()">🛒 购物车 <span class="count" id="headerCount">0</span></button>
 </div>
 
 <div class="hero">
-  <h1>优质 <span>营养补充剂</span></h1>
-  <p>高端实验室级营养补充剂，助力您的健康与活力。每一款产品均经过严格质量检测。</p>
+  <h1>高品质 <span>科研肽</span></h1>
+  <p>实验室级肽类产品，严格质量控制。每盒 10 瓶，冷链配送。</p>
   <div class="badges">
-    <span>✅ GMP 认证</span>
+    <span>✅ 纯度 ≥98%</span>
     <span>🧪 第三方检测</span>
-    <span>🚚 全球配送</span>
+    <span>📦 10瓶/盒</span>
     <span>💬 WhatsApp 下单</span>
   </div>
 </div>
 
 <div class="search-wrap">
-  <input type="text" id="searchInput" placeholder="搜索产品名称、编号或关键词..." oninput="render()">
+  <input type="text" id="searchInput" placeholder="搜索产品名称、编号..." oninput="render()">
 </div>
 
 <div class="filter" id="filterBar">
   <button class="filter-btn active" data-cat="all" onclick="setCat('all')">全部</button>
-  <button class="filter-btn" data-cat="vitamins" onclick="setCat('vitamins')">💊 维生素</button>
-  <button class="filter-btn" data-cat="minerals" onclick="setCat('minerals')">🧂 矿物质</button>
-  <button class="filter-btn" data-cat="antioxidants" onclick="setCat('antioxidants')">🛡 抗氧化</button>
-  <button class="filter-btn" data-cat="herbal" onclick="setCat('herbal')">🌿 草本</button>
-  <button class="filter-btn" data-cat="wellness" onclick="setCat('wellness')">💪 保健</button>
+  <button class="filter-btn" data-cat="glp1" onclick="setCat('glp1')">⚖️ GLP-1 / 减重</button>
+  <button class="filter-btn" data-cat="gh" onclick="setCat('gh')">📈 GHRP / 生长激素</button>
+  <button class="filter-btn" data-cat="repair" onclick="setCat('repair')">🔧 修复再生</button>
+  <button class="filter-btn" data-cat="antiage" onclick="setCat('antiage')">🛡 抗衰 / 抗氧化</button>
+  <button class="filter-btn" data-cat="skincare" onclick="setCat('skincare')">💎 护肤美容</button>
+  <button class="filter-btn" data-cat="supplies" onclick="setCat('supplies')">🧪 实验室耗材</button>
+  <button class="filter-btn" data-cat="research" onclick="setCat('research')">🔬 其他研究肽</button>
 </div>
 
 <div class="grid" id="productGrid"></div>
 
 <div class="footer">
-  <strong>📍 VITARA Labs</strong><br>
-  全球优质营养补充剂供应商<br>
-  📱 <strong>WhatsApp</strong>：订单咨询<br>
-  📧 邮箱：info@vitara-labs.com<br><br>
-  <span style="font-size:10px;color:var(--text3);opacity:.6">v1.0 — 所有价格以美元计 · 1 盒 = 10 瓶</span>
+  <strong>📍 Research Peptides</strong><br>
+  实验室级肽类产品供应商<br>
+  📱 <strong>WhatsApp</strong>：订单咨询<br><br>
+  <span style="font-size:10px;color:var(--text3);opacity:.6">所有价格以美元计 · 每盒 10 瓶</span>
 </div>
 
-<!-- Cart FAB -->
-<button class="cart-fab" id="cartFab" onclick="toggleCart()">
-  🛒
-  <span class="cart-badge" id="fabBadge">0</span>
-</button>
+<button class="cart-fab" id="cartFab" onclick="toggleCart()">🛒<span class="cart-badge" id="fabBadge">0</span></button>
 
-<!-- Cart Drawer -->
 <div class="cart-overlay" id="cartOverlay" onclick="if(event.target===this)toggleCart()">
   <div class="cart-drawer">
-    <div class="cart-hdr">
-      <h3>🛒 购物车</h3>
-      <button onclick="toggleCart()">✕</button>
-    </div>
-    <div class="cart-items" id="cartItems">
-      <div class="cart-empty">购物车是空的</div>
-    </div>
+    <div class="cart-hdr"><h3>🛒 购物车</h3><button onclick="toggleCart()">✕</button></div>
+    <div class="cart-items" id="cartItems"><div class="cart-empty">购物车是空的</div></div>
     <div class="cart-ftr">
-      <div class="cart-total">
-        <span>合计</span>
-        <span class="total-price" id="cartTotal">$0</span>
-      </div>
+      <div class="cart-total"><span>合计</span><span class="total-price" id="cartTotal">$0</span></div>
       <div class="cart-actions">
         <button class="btn-confirm" onclick="openOrderModal()">📋 下单</button>
         <button class="btn-clear" onclick="clearCart()">清空</button>
@@ -221,16 +180,13 @@ a{text-decoration:none;color:inherit}
   </div>
 </div>
 
-<!-- Order Modal -->
 <div class="order-overlay" id="orderOverlay" onclick="if(event.target===this)closeOrderModal()">
   <div class="order-modal">
     <h2>📋 您的订单</h2>
-    <p class="sub">通过 WhatsApp 发送订单给我们</p>
+    <p class="sub">通过 WhatsApp 发送订单</p>
     <div class="order-box" id="orderBox"></div>
-    <button class="whatsapp-btn" id="whatsappBtn" onclick="sendWhatsApp()">
-      <span>💬</span> 发送到 WhatsApp
-    </button>
-    <button class="copy-btn" onclick="copyOrder()">📋 复制订单文本</button>
+    <button class="whatsapp-btn" id="whatsappBtn" onclick="sendWhatsApp()"><span>💬</span> 发送到 WhatsApp</button>
+    <button class="copy-btn" onclick="copyOrder()">📋 复制订单</button>
     <button class="order-close" onclick="closeOrderModal()">继续选购</button>
   </div>
 </div>
@@ -238,229 +194,192 @@ a{text-decoration:none;color:inherit}
 <div class="toast" id="toast"></div>
 
 <script>
-// === 产品数据 ===
-const products = [
-  {code:"001",name:"α-硫辛酸",spec:"100mg×10瓶",price:25,cat:"antioxidants",icon:"🔬"},
-  {code:"002",name:"辅酶 Q10",spec:"30mg×10瓶",price:28,cat:"antioxidants",icon:"❤️"},
-  {code:"003",name:"维生素 C（抗坏血酸）",spec:"500mg×10瓶",price:22,cat:"vitamins",icon:"🍊"},
-  {code:"004",name:"维生素 B 族复合",spec:"B1+B2+B6+B12×10",price:24,cat:"vitamins",icon:"🧪"},
-  {code:"005",name:"谷胱甘肽",spec:"600mg×10瓶",price:35,cat:"antioxidants",icon:"✨"},
-  {code:"006",name:"胶原蛋白（I 型）",spec:"500mg×10瓶",price:32,cat:"wellness",icon:"💎"},
-  {code:"007",name:"褪黑素",spec:"3mg×10瓶",price:20,cat:"wellness",icon:"🌙"},
-  {code:"008",name:"镁",spec:"200mg×10瓶",price:21,cat:"minerals",icon:"⚡"},
-  {code:"009",name:"锌",spec:"50mg×10瓶",price:19,cat:"minerals",icon:"🛡"},
-  {code:"010",name:"钙",spec:"500mg×10瓶",price:23,cat:"minerals",icon:"🦴"},
-  {code:"011",name:"维生素 D3",spec:"1000IU×10瓶",price:26,cat:"vitamins",icon:"☀️"},
-  {code:"012",name:"维生素 E",spec:"100IU×10瓶",price:27,cat:"vitamins",icon:"🌟"},
-  {code:"013",name:"硒",spec:"100mcg×10瓶",price:18,cat:"minerals",icon:"🔵"},
-  {code:"014",name:"叶酸",spec:"5mg×10瓶",price:17,cat:"vitamins",icon:"🧬"},
-  {code:"015",name:"Omega-3 鱼油",spec:"1000mg×10瓶",price:30,cat:"wellness",icon:"🐟"},
-  {code:"016",name:"益生菌",spec:"50亿CFU×10瓶",price:33,cat:"wellness",icon:"🦠"},
-  {code:"017",name:"左旋肉碱",spec:"500mg×10瓶",price:29,cat:"wellness",icon:"🔥"},
-  {code:"018",name:"肌酸",spec:"1000mg×10瓶",price:24,cat:"wellness",icon:"💪"},
-  {code:"019",name:"绿茶提取物",spec:"500mg×10瓶",price:22,cat:"antioxidants",icon:"🍵"},
-  {code:"020",name:"水飞蓟",spec:"200mg×10瓶",price:25,cat:"herbal",icon:"🌿"},
-  {code:"021",name:"姜黄素",spec:"500mg×10瓶",price:26,cat:"antioxidants",icon:"🟡"},
-  {code:"022",name:"姜提取物",spec:"200mg×10瓶",price:21,cat:"herbal",icon:"🫚"},
-  {code:"023",name:"大蒜提取物",spec:"300mg×10瓶",price:20,cat:"herbal",icon:"🧄"},
-  {code:"024",name:"银杏叶",spec:"120mg×10瓶",price:27,cat:"herbal",icon:"🍃"},
-  {code:"025",name:"人参",spec:"200mg×10瓶",price:31,cat:"herbal",icon:"🌱"},
-  {code:"026",name:"南非醉茄（Ashwagandha）",spec:"500mg×10瓶",price:28,cat:"herbal",icon:"🌿"},
-  {code:"027",name:"玛咖根",spec:"500mg×10瓶",price:29,cat:"herbal",icon:"🥔"},
-  {code:"028",name:"锯棕榈",spec:"320mg×10瓶",price:23,cat:"herbal",icon:"🌴"},
-  {code:"029",name:"蔓越莓提取物",spec:"500mg×10瓶",price:24,cat:"herbal",icon:"🫐"},
-  {code:"030",name:"紫锥菊",spec:"300mg×10瓶",price:22,cat:"herbal",icon:"🌸"},
-  {code:"031",name:"接骨木莓提取物",spec:"500mg×10瓶",price:25,cat:"herbal",icon:"🫐"},
-  {code:"032",name:"蒲公英根",spec:"500mg×10瓶",price:20,cat:"herbal",icon:"🌼"},
-  {code:"033",name:"缬草根",spec:"500mg×10瓶",price:20,cat:"herbal",icon:"💜"},
-  {code:"034",name:"生物素（维生素 B7）",spec:"5000mcg×10瓶",price:19,cat:"vitamins",icon:"💅"},
-  {code:"035",name:"维生素 K2",spec:"100mcg×10瓶",price:28,cat:"vitamins",icon:"🩸"},
-  {code:"036",name:"铁（亚铁）",spec:"65mg×10瓶",price:18,cat:"minerals",icon:"🔴"},
+const products=[
+  // ⚖️ GLP-1 / 减重
+  {code:"SM5",name:"Semaglutide",spec:"5mg×10瓶",price:31,cat:"glp1",icon:"⚖️"},
+  {code:"TR80",name:"Tirzepatide",spec:"80mg×10瓶",price:235,cat:"glp1",icon:"⚖️"},
+  {code:"TR90",name:"Tirzepatide",spec:"90mg×10瓶",price:259,cat:"glp1",icon:"⚖️"},
+  {code:"TR100",name:"Tirzepatide",spec:"100mg×10瓶",price:282,cat:"glp1",icon:"⚖️"},
+  {code:"TR110",name:"Tirzepatide",spec:"110mg×10瓶",price:306,cat:"glp1",icon:"⚖️"},
+  {code:"TR120",name:"Tirzepatide",spec:"120mg×10瓶",price:329,cat:"glp1",icon:"⚖️"},
+  {code:"RT5",name:"Retatrutide",spec:"5mg×10瓶",price:47,cat:"glp1",icon:"⚖️"},
+  {code:"RT10",name:"Retatrutide",spec:"10mg×10瓶",price:71,cat:"glp1",icon:"⚖️"},
+  {code:"RT15",name:"Retatrutide",spec:"15mg×10瓶",price:101,cat:"glp1",icon:"⚖️"},
+  {code:"RT20",name:"Retatrutide",spec:"20mg×10瓶",price:122,cat:"glp1",icon:"⚖️"},
+  {code:"RT30",name:"Retatrutide",spec:"30mg×10瓶",price:165,cat:"glp1",icon:"⚖️"},
+  {code:"RT40",name:"Retatrutide",spec:"40mg×10瓶",price:212,cat:"glp1",icon:"⚖️"},
+  {code:"RT50",name:"Retatrutide",spec:"50mg×10瓶",price:235,cat:"glp1",icon:"⚖️"},
+  {code:"RT60",name:"Retatrutide",spec:"60mg×10瓶",price:282,cat:"glp1",icon:"⚖️"},
+  {code:"CS5",name:"Cagrisema (2.5+2.5)",spec:"5mg×10瓶",price:75,cat:"glp1",icon:"⚖️"},
+  {code:"CS10",name:"Cagrisema (5+5)",spec:"10mg×10瓶",price:165,cat:"glp1",icon:"⚖️"},
+  {code:"CS20",name:"Cagrisema (10+10)",spec:"20mg×10瓶",price:200,cat:"glp1",icon:"⚖️"},
+  {code:"CGL2",name:"Cagrilintide",spec:"2mg×10瓶",price:60,cat:"glp1",icon:"⚖️"},
+  {code:"CGL5",name:"Cagrilintide",spec:"5mg×10瓶",price:98,cat:"glp1",icon:"⚖️"},
+  {code:"CGL10",name:"Cagrilintide",spec:"10mg×10瓶",price:188,cat:"glp1",icon:"⚖️"},
+  {code:"DU5",name:"Dulaglutide",spec:"5mg×10瓶",price:148,cat:"glp1",icon:"⚖️"},
+  {code:"DU10",name:"Dulaglutide",spec:"10mg×10瓶",price:260,cat:"glp1",icon:"⚖️"},
+  {code:"MAZ",name:"Mazdutide",spec:"10mg×10瓶",price:220,cat:"glp1",icon:"⚖️"},
+
+  // 📈 GHRP / 生长激素
+  {code:"CD5",name:"CJC-1295 With DAC",spec:"5mg×10瓶",price:153,cat:"gh",icon:"📈"},
+  {code:"CND5",name:"CJC-1295 Without DAC",spec:"5mg×10瓶",price:85,cat:"gh",icon:"📈"},
+  {code:"CND10",name:"CJC-1295 Without DAC",spec:"10mg×10瓶",price:136,cat:"gh",icon:"📈"},
+  {code:"CP10",name:"CJC-1295+IPA",spec:"5mg+5mg×10瓶",price:106,cat:"gh",icon:"📈"},
+  {code:"G65",name:"GHRP-6",spec:"5mg×10瓶",price:31,cat:"gh",icon:"📈"},
+  {code:"G610",name:"GHRP-6",spec:"10mg×10瓶",price:49,cat:"gh",icon:"📈"},
+  {code:"G25",name:"GHRP-2",spec:"5mg×10瓶",price:31,cat:"gh",icon:"📈"},
+  {code:"G210",name:"GHRP-2",spec:"10mg×10瓶",price:49,cat:"gh",icon:"📈"},
+  {code:"G215",name:"GHRP-2",spec:"15mg×10瓶",price:68,cat:"gh",icon:"📈"},
+  {code:"IP5",name:"Ipamorelin",spec:"5mg×10瓶",price:40,cat:"gh",icon:"📈"},
+  {code:"IP10",name:"Ipamorelin",spec:"10mg×10瓶",price:71,cat:"gh",icon:"📈"},
+  {code:"SMO5",name:"Sermorelin Acetate",spec:"5mg×10瓶",price:71,cat:"gh",icon:"📈"},
+  {code:"SMO10",name:"Sermorelin Acetate",spec:"10mg×10瓶",price:129,cat:"gh",icon:"📈"},
+  {code:"TSM5",name:"Tesamorelin",spec:"5mg×10瓶",price:94,cat:"gh",icon:"📈"},
+  {code:"TSM10",name:"Tesamorelin",spec:"10mg×10瓶",price:169,cat:"gh",icon:"📈"},
+  {code:"TSM20",name:"Tesamorelin",spec:"20mg×10瓶",price:329,cat:"gh",icon:"📈"},
+  {code:"IG01",name:"IGF-1LR3",spec:"0.1mg×10瓶",price:42,cat:"gh",icon:"📈"},
+  {code:"IG1",name:"IGF-1LR3",spec:"1mg×10瓶",price:176,cat:"gh",icon:"📈"},
+  {code:"IGD",name:"IGF-DES",spec:"2mg×10瓶",price:50,cat:"gh",icon:"📈"},
+  {code:"PMF",name:"PEG MGF",spec:"2mg×10瓶",price:83,cat:"gh",icon:"📈"},
+
+  // 🔧 修复再生
+  {code:"BB10",name:"BPC157+TB500",spec:"5+5mg×10瓶",price:89,cat:"repair",icon:"🔧"},
+  {code:"BB20",name:"BPC157+TB500",spec:"10+10mg×10瓶",price:165,cat:"repair",icon:"🔧"},
+  {code:"BB30",name:"BPC157+TB500",spec:"15+15mg×10瓶",price:300,cat:"repair",icon:"🔧"},
+  {code:"GLOW",name:"GLOW (BPC+GHK-CU+TB)",spec:"70mg×10瓶",price:250,cat:"repair",icon:"🔧"},
+  {code:"KLOW",name:"KLOW (BPC+GHK-CU+TB+KPV)",spec:"80mg×10瓶",price:250,cat:"repair",icon:"🔧"},
+  {code:"CU50",name:"GHK-CU",spec:"50mg×10瓶",price:24,cat:"repair",icon:"🔧"},
+  {code:"CU100",name:"GHK-CU",spec:"100mg×10瓶",price:40,cat:"repair",icon:"🔧"},
+  {code:"KP10",name:"KPV",spec:"10mg×10瓶",price:68,cat:"repair",icon:"🔧"},
+  {code:"2S10",name:"SS-31",spec:"10mg×10瓶",price:82,cat:"repair",icon:"🔧"},
+  {code:"2S50",name:"SS-31",spec:"50mg×10瓶",price:400,cat:"repair",icon:"🔧"},
+  {code:"MS10",name:"MOTS-C",spec:"10mg×10瓶",price:59,cat:"repair",icon:"🔧"},
+  {code:"MS40",name:"MOTS-C",spec:"40mg×10瓶",price:224,cat:"repair",icon:"🔧"},
+  {code:"AHK20",name:"AHK-CU",spec:"20mg×10瓶",price:32,cat:"repair",icon:"🔧"},
+  {code:"AHK50",name:"AHK-CU",spec:"50mg×10瓶",price:60,cat:"repair",icon:"🔧"},
+  {code:"B733",name:"B7-33",spec:"2mg×10瓶",price:57,cat:"repair",icon:"🔧"},
+  {code:"B7310",name:"B7-33",spec:"10mg×10瓶",price:197,cat:"repair",icon:"🔧"},
+
+  // 🛡 抗衰 / 抗氧化
+  {code:"NJ100",name:"NAD+",spec:"100mg×10瓶",price:33,cat:"antiage",icon:"🛡"},
+  {code:"NJ500",name:"NAD+",spec:"500mg×10瓶",price:59,cat:"antiage",icon:"🛡"},
+  {code:"NJ1000",name:"NAD+",spec:"1000mg×10瓶",price:129,cat:"antiage",icon:"🛡"},
+  {code:"GTT",name:"Glutathione",spec:"1500mg×10瓶",price:59,cat:"antiage",icon:"🛡"},
+  {code:"DS5",name:"DSIP",spec:"5mg×10瓶",price:38,cat:"antiage",icon:"🛡"},
+  {code:"DS10",name:"DSIP",spec:"10mg×10瓶",price:82,cat:"antiage",icon:"🛡"},
+  {code:"5AD",name:"AOD 9064",spec:"5mg×10瓶",price:94,cat:"antiage",icon:"🛡"},
+  {code:"10AD",name:"AOD 9064",spec:"10mg×10瓶",price:176,cat:"antiage",icon:"🛡"},
+  {code:"LL37",name:"LL-37",spec:"5mg×10瓶",price:172,cat:"antiage",icon:"🛡"},
+  {code:"FOXO2",name:"FOXO4-DRI",spec:"2mg×10瓶",price:92,cat:"antiage",icon:"🛡"},
+  {code:"FOXO10",name:"FOXO4-DRI",spec:"10mg×10瓶",price:300,cat:"antiage",icon:"🛡"},
+  {code:"ADM5",name:"ADMAX",spec:"5mg×10瓶",price:80,cat:"antiage",icon:"🛡"},
+  {code:"ADM10",name:"ADMAX",spec:"10mg×10瓶",price:110,cat:"antiage",icon:"🛡"},
+  {code:"P21",name:"P21 (P021)",spec:"5mg×10瓶",price:294,cat:"antiage",icon:"🛡"},
+  {code:"5AM",name:"5-AMINO-1MQ",spec:"5mg×10瓶",price:47,cat:"antiage",icon:"🛡"},
+  {code:"50AM",name:"5-AMINO-1MQ",spec:"50mg×10瓶",price:106,cat:"antiage",icon:"🛡"},
+  {code:"AR50",name:"Aicar",spec:"50mg×10瓶",price:64,cat:"antiage",icon:"🛡"},
+
+  // 💎 护肤美容
+  {code:"NP810",name:"SNAP-8",spec:"2mg×10瓶",price:42,cat:"skincare",icon:"💎"},
+  {code:"MX10",name:"Matrixyl",spec:"10mg×10瓶",price:35,cat:"skincare",icon:"💎"},
+  {code:"MT1",name:"MT-1",spec:"10mg×10瓶",price:42,cat:"skincare",icon:"💎"},
+  {code:"ML10",name:"MT-2 (Melanotan 2)",spec:"10mg×10瓶",price:47,cat:"skincare",icon:"💎"},
+  {code:"MT10",name:"Melatonin",spec:"10mg×10瓶",price:42,cat:"skincare",icon:"💎"},
+
+  // 🧪 实验室耗材
+  {code:"WA3",name:"BAC WATER",spec:"3ml×10瓶",price:7,cat:"supplies",icon:"🧪"},
+  {code:"WA10",name:"BAC WATER",spec:"10ml×10瓶",price:9,cat:"supplies",icon:"🧪"},
+  {code:"BA3",name:"BA WATER",spec:"3ml×10瓶",price:7,cat:"supplies",icon:"🧪"},
+  {code:"BA10",name:"BA WATER",spec:"10ml×10瓶",price:9,cat:"supplies",icon:"🧪"},
+  {code:"AA3",name:"Acetic Acid",spec:"3ml×10瓶",price:7,cat:"supplies",icon:"🧪"},
+  {code:"AA10",name:"Acetic Acid",spec:"10ml×10瓶",price:9,cat:"supplies",icon:"🧪"},
+
+  // 🔬 其他研究肽
+  {code:"AP5",name:"Adipotide",spec:"5mg×10瓶",price:165,cat:"research",icon:"🔬"},
+  {code:"AP10",name:"Adipotide",spec:"10mg×10瓶",price:211,cat:"research",icon:"🔬"},
+  {code:"FTPP",name:"FTPP Adipotide",spec:"5mg×10瓶",price:115,cat:"research",icon:"🔬"},
+  {code:"LC216",name:"L-Carnitine",spec:"600mg/10ml×10",price:47,cat:"research",icon:"🔬"},
+  {code:"LC600",name:"L-Carnitine",spec:"10ml×10瓶",price:50,cat:"research",icon:"🔬"},
+  {code:"XA5",name:"Semax",spec:"5mg×10瓶",price:54,cat:"research",icon:"🔬"},
+  {code:"XA10",name:"Semax",spec:"10mg×10瓶",price:85,cat:"research",icon:"🔬"},
+  {code:"VP5",name:"VIP",spec:"5mg×10瓶",price:78,cat:"research",icon:"🔬"},
+  {code:"VP10",name:"VIP",spec:"10mg×10瓶",price:172,cat:"research",icon:"🔬"},
+  {code:"TA5",name:"Thymosin Alpha-1",spec:"5mg×10瓶",price:94,cat:"research",icon:"🔬"},
+  {code:"TA10",name:"Thymosin Alpha-1",spec:"10mg×10瓶",price:153,cat:"research",icon:"🔬"},
+  {code:"SK5",name:"Selank",spec:"5mg×10瓶",price:47,cat:"research",icon:"🔬"},
+  {code:"SK10",name:"Selank",spec:"10mg×10瓶",price:82,cat:"research",icon:"🔬"},
+  {code:"OT2",name:"Oxytocin Acetate",spec:"2mg×10瓶",price:28,cat:"research",icon:"🔬"},
+  {code:"OT5",name:"Oxytocin Acetate",spec:"5mg×10瓶",price:47,cat:"research",icon:"🔬"},
+  {code:"OT10",name:"Oxytocin Acetate",spec:"10mg×10瓶",price:89,cat:"research",icon:"🔬"},
+  {code:"P41",name:"PT-141",spec:"10mg×10瓶",price:66,cat:"research",icon:"🔬"},
+  {code:"B12",name:"B12",spec:"10mg×10瓶",price:20,cat:"research",icon:"🔬"},
+  {code:"OREB",name:"Orexin B",spec:"10mg×10瓶",price:230,cat:"research",icon:"🔬"},
+  {code:"OREA",name:"Orexin A",spec:"10mg×10瓶",price:560,cat:"research",icon:"🔬"},
+  {code:"CAR",name:"Cardiogen",spec:"20mg×10瓶",price:97,cat:"research",icon:"🔬"},
+  {code:"CTX",name:"Cartalax",spec:"20mg×10瓶",price:90,cat:"research",icon:"🔬"},
+  {code:"CORT",name:"Cortagen",spec:"20mg×10瓶",price:97,cat:"research",icon:"🔬"},
+  {code:"CRY",name:"Crystagen",spec:"20mg×10瓶",price:93,cat:"research",icon:"🔬"},
+  {code:"PTD",name:"PTD-DBM",spec:"1mg×10瓶",price:60,cat:"research",icon:"🔬"},
+  {code:"BRON",name:"Bronchogen",spec:"20mg×10瓶",price:93,cat:"research",icon:"🔬"},
+  {code:"XT100",name:"Botulinum Toxin",spec:"100iu×10瓶",price:155,cat:"research",icon:"🔬"},
+  {code:"EPO",name:"EPO",spec:"3000iu×10瓶",price:60,cat:"research",icon:"🔬"},
+  {code:"PE22",name:"PE-22-28",spec:"10mg×10瓶",price:72,cat:"research",icon:"🔬"},
+  {code:"PNC",name:"PNC-27",spec:"5mg×10瓶",price:84,cat:"research",icon:"🔬"},
+  {code:"GDF8",name:"GDF-8",spec:"1mg×10瓶",price:180,cat:"research",icon:"🔬"},
+  {code:"AC1",name:"ACE 031",spec:"1mg×10瓶",price:40,cat:"research",icon:"🔬"},
+  {code:"ACTH",name:"ACTH 1-39",spec:"5mg×10瓶",price:60,cat:"research",icon:"🔬"},
+  {code:"TY10",name:"Thymalin",spec:"10mg×10瓶",price:66,cat:"research",icon:"🔬"},
+  {code:"RA10",name:"Ara-290",spec:"10mg×10瓶",price:73,cat:"research",icon:"🔬"},
+  {code:"MIC",name:"MIC (lipo C+B12)",spec:"10mg×10瓶",price:100,cat:"research",icon:"🔬"},
 ];
 
-// === 状态 ===
-let cart = {};
-let currentCat = "all";
-let searchTerm = "";
+let cart={};
+let currentCat="all";
+let searchTerm="";
 
-const CAT_NAMES = {vitamins:"💊 维生素",minerals:"🧂 矿物质",antioxidants:"🛡 抗氧化",herbal:"🌿 草本",wellness:"💪 保健"};
+const CAT_NAMES={glp1:"⚖️ GLP-1 / 减重",gh:"📈 GHRP / 生长激素",repair:"🔧 修复再生",antiage:"🛡 抗衰 / 抗氧化",skincare:"💎 护肤美容",supplies:"🧪 实验室耗材",research:"🔬 其他研究肽"};
 
-// === 初始化 ===
-(function(){
-  try{const d=JSON.parse(localStorage.getItem("vitara_cart")||"{}");cart=d}catch(e){}
-})();
-
+(function(){try{const d=JSON.parse(localStorage.getItem("vitara_cart")||"{}");cart=d}catch(e){}})();
 function save(){localStorage.setItem("vitara_cart",JSON.stringify(cart))}
 
-// === 渲染 ===
 function render(){
   const grid=document.getElementById("productGrid");
-  let items = products;
-  if(currentCat!=="all") items=items.filter(p=>p.cat===currentCat);
+  let items=products;
+  if(currentCat!=="all")items=items.filter(p=>p.cat===currentCat);
   const s=document.getElementById("searchInput").value.trim().toLowerCase();
-  if(s) items=items.filter(p=>p.name.toLowerCase().includes(s)||p.code.includes(s)||p.cat.includes(s));
-
-  if(!items.length){
-    grid.innerHTML='<div class="empty-state"><div class="big">🔍</div><p>未找到相关产品</p></div>';
-    return;
-  }
+  if(s)items=items.filter(p=>p.name.toLowerCase().includes(s)||p.code.toLowerCase().includes(s));
+  if(!items.length){grid.innerHTML='<div class="empty-state"><div class="big">🔍</div><p>未找到相关产品</p></div>';return}
   grid.innerHTML=items.map(p=>{
     const inc=!!cart[p.code],qty=cart[p.code]||0;
-    return `<div class="card">
-      <div class="icon">${p.icon||"🧬"}</div>
-      <h3>${p.name}</h3>
-      <div class="code">#${p.code}</div>
-      <span class="cat-tag">${CAT_NAMES[p.cat]||p.cat}</span>
-      <div class="bottom">
-        <div class="price">$${p.price} <small>/盒</small></div>
-        <button class="add${inc?" in-cart":""}" onclick="event.stopPropagation();addToCart('${p.code}')">${inc?"✓ "+qty:"加入"}</button>
-      </div>
-    </div>`;
+    return `<div class="card"><div class="icon">${p.icon||"🧬"}</div><h3>${p.name}</h3><div class="code">#${p.code}</div><span class="cat-tag">${CAT_NAMES[p.cat]||p.cat}</span><div class="bottom"><div class="price">$${p.price} <small>/盒</small></div><button class="add${inc?" in-cart":""}" onclick="event.stopPropagation();addToCart('${p.code}')">${inc?"✓ "+qty:"加入"}</button></div></div>`
   }).join("");
 }
 
-function setCat(cat){
-  currentCat=cat;
-  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.toggle("active",b.dataset.cat===cat));
-  render();
-}
-
-// === 购物车 ===
-function addToCart(code){
-  if(!cart[code]) cart[code]=0;
-  cart[code]++;
-  save();
-  updateUI();
-  renderCart();
-  render();
-  toast("+1 "+products.find(p=>p.code===code).name,true);
-}
-
-function removeFromCart(code){
-  if(!cart[code])return;
-  cart[code]--;
-  if(cart[code]<=0) delete cart[code];
-  save();
-  updateUI();
-  renderCart();
-  render();
-}
-
-function clearCart(){
-  cart={};save();
-  updateUI();renderCart();render();
-  toast("购物车已清空");
-}
-
+function setCat(cat){currentCat=cat;document.querySelectorAll(".filter-btn").forEach(b=>b.classList.toggle("active",b.dataset.cat===cat));render()}
+function addToCart(code){if(!cart[code])cart[code]=0;cart[code]++;save();updateUI();renderCart();render();toast("+1 "+products.find(p=>p.code===code).name,true)}
+function removeFromCart(code){if(!cart[code])return;cart[code]--;if(cart[code]<=0)delete cart[code];save();updateUI();renderCart();render()}
+function clearCart(){cart={};save();updateUI();renderCart();render();toast("购物车已清空")}
 function totalCount(){return Object.values(cart).reduce((a,b)=>a+b,0)}
 function totalPrice(){return Object.entries(cart).reduce((s,[c,q])=>s+q*(products.find(p=>p.code===c)?.price||0),0)}
+function updateUI(){const n=totalCount();document.getElementById("headerCount").textContent=n;const b=document.getElementById("fabBadge");if(n>0){b.style.display="flex";b.textContent=n}else{b.style.display="none"}document.getElementById("cartTotal").textContent="$"+totalPrice()}
+function renderCart(){const el=document.getElementById("cartItems");const items=Object.entries(cart);if(!items.length){el.innerHTML='<div class="cart-empty">购物车是空的</div>';return}el.innerHTML=items.map(([c,q])=>{const p=products.find(x=>x.code===c);if(!p)return"";return`<div class="cart-item"><div class="cart-item-info"><div class="cart-item-name">${p.name}</div><div class="cart-item-spec">#${c} · ${p.spec} · $${p.price}/盒</div></div><div class="cart-qty"><button onclick="removeFromCart('${c}')">−</button><span>${q}</span><button onclick="addToCart('${c}')">+</button></div><span class="cart-item-total">$${q*p.price}</span></div>`}).join("")}
+function toggleCart(){const o=document.getElementById("cartOverlay");if(o.classList.contains("open")){o.classList.remove("open");return}renderCart();o.classList.add("open")}
 
-function updateUI(){
-  const n=totalCount();
-  document.getElementById("headerCount").textContent=n;
-  const b=document.getElementById("fabBadge");
-  if(n>0){b.style.display="flex";b.textContent=n}else{b.style.display="none"}
-  document.getElementById("cartTotal").textContent="$"+totalPrice();
-}
-
-function renderCart(){
-  const el=document.getElementById("cartItems");
-  const items=Object.entries(cart);
-  if(!items.length){el.innerHTML='<div class="cart-empty">购物车是空的</div>';return}
-  el.innerHTML=items.map(([c,q])=>{
-    const p=products.find(x=>x.code===c);
-    if(!p)return"";
-    return `<div class="cart-item">
-      <div class="cart-item-info">
-        <div class="cart-item-name">${p.name}</div>
-        <div class="cart-item-spec">#${c} · ${p.spec} · $${p.price}/盒</div>
-      </div>
-      <div class="cart-qty">
-        <button onclick="removeFromCart('${c}')">−</button>
-        <span>${q}</span>
-        <button onclick="addToCart('${c}')">+</button>
-      </div>
-      <span class="cart-item-total">$${q*p.price}</span>
-    </div>`;
-  }).join("");
-}
-
-function toggleCart(){
-  const o=document.getElementById("cartOverlay");
-  if(o.classList.contains("open")){o.classList.remove("open");return}
-  renderCart();o.classList.add("open");
-}
-
-// === 订单 ===
 function openOrderModal(){
-  const items=Object.entries(cart);
-  if(!items.length){toast("购物车是空的");return}
+  const items=Object.entries(cart);if(!items.length){toast("购物车是空的");return}
   document.getElementById("cartOverlay").classList.remove("open");
-
   const box=document.getElementById("orderBox");
-  box.innerHTML=items.map(([c,q])=>{
-    const p=products.find(x=>x.code===c);
-    if(!p)return"";
-    return `<div class="order-line">${p.name} (${p.code}) — ${p.spec} × ${q} 盒 = $${q*p.price}</div>`;
-  }).join("")+
-  `<div class="order-total-line">合计: $${totalPrice()}（共 ${totalCount()} 盒）</div>`;
-
+  box.innerHTML=items.map(([c,q])=>{const p=products.find(x=>x.code===c);if(!p)return"";return`<div class="order-line">${p.name} (#${p.code}) — ${p.spec} × ${q} 盒 = $${q*p.price}</div>`}).join("")+`<div class="order-total-line">合计: $${totalPrice()}（共 ${totalCount()} 盒）</div>`;
   document.getElementById("orderOverlay").classList.add("open");
 }
+function closeOrderModal(){document.getElementById("orderOverlay").classList.remove("open")}
+function buildOrderText(){const items=Object.entries(cart);let t="=== 新订单 ===\n\n";items.forEach(([c,q],i)=>{const p=products.find(x=>x.code===c);if(!p)return;t+=`${i+1}. ${p.name} (#${p.code})\n   ${p.spec} × ${q} 盒 = $${q*p.price}\n\n`});t+=`──────────────\n合计: $${totalPrice()}\n数量: ${totalCount()} 盒\n──────────────\n\n谢谢！`;return t}
+function sendWhatsApp(){window.open("https://wa.me/1234567890?text="+encodeURIComponent(buildOrderText()),"_blank")}
+function copyOrder(){const t=buildOrderText();if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(()=>{toast("✅ 已复制！",true);document.querySelector(".copy-btn").textContent="✅ 已复制！";setTimeout(()=>document.querySelector(".copy-btn").textContent="📋 复制订单",2000)}).catch(()=>fallbackCopy(t))}else{fallbackCopy(t)}}
+function fallbackCopy(t){const ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");toast("✅ 已复制！",true)}catch(e){toast("⚠️ 复制失败")}document.body.removeChild(ta)}
+function toast(msg,important){const t=document.getElementById("toast");t.textContent=msg;t.className="toast"+(msg.includes("✅")?" success":"")+(msg.includes("⚠️")?" error":"");t.classList.add("show");clearTimeout(t._to);t._to=setTimeout(()=>t.classList.remove("show"),important?2500:1800)}
 
-function closeOrderModal(){
-  document.getElementById("orderOverlay").classList.remove("open");
-}
-
-function buildOrderText(){
-  const items=Object.entries(cart);
-  let t="=== 新订单 ===\n\n";
-  items.forEach(([c,q],i)=>{
-    const p=products.find(x=>x.code===c);
-    if(!p)return;
-    t+=`${i+1}. ${p.name} (#${p.code})\n   ${p.spec} × ${q} 盒 = $${q*p.price}\n\n`;
-  });
-  t+=`──────────────\n合计: $${totalPrice()}\n数量: ${totalCount()} 盒\n──────────────\n\n谢谢！`;
-  return t;
-}
-
-function sendWhatsApp(){
-  const txt=encodeURIComponent(buildOrderText());
-  window.open(`https://wa.me/1234567890?text=${txt}`,"_blank");
-}
-
-function copyOrder(){
-  const txt=buildOrderText();
-  if(navigator.clipboard&&navigator.clipboard.writeText){
-    navigator.clipboard.writeText(txt).then(()=>{
-      toast("✅ 已复制！",true);
-      document.querySelector(".copy-btn").textContent="✅ 已复制！";
-      setTimeout(()=>document.querySelector(".copy-btn").textContent="📋 复制订单文本",2000);
-    }).catch(()=>fallbackCopy(txt));
-  }else{fallbackCopy(txt)}
-}
-
-function fallbackCopy(t){
-  const ta=document.createElement("textarea");
-  ta.value=t;ta.style.position="fixed";ta.style.opacity="0";
-  document.body.appendChild(ta);ta.select();
-  try{document.execCommand("copy");toast("✅ 已复制！",true)}catch(e){toast("⚠️ 复制失败，请手动选择")}
-  document.body.removeChild(ta);
-}
-
-// === 提示 ===
-function toast(msg,important){
-  const t=document.getElementById("toast");
-  t.textContent=msg;
-  t.className="toast"+(msg.includes("✅")?" success":"")+(msg.includes("⚠️")?" error":"");
-  t.classList.add("show");
-  clearTimeout(t._to);
-  t._to=setTimeout(()=>t.classList.remove("show"),important?2500:1800);
-}
-
-// === 启动 ===
-render();
-updateUI();
+render();updateUI();
 </script>
 </body>
 </html>
