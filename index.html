@@ -379,18 +379,18 @@ const products=[
   {code:"CS5", name:"Cagrisema (2.5+2.5)",spec:"5mg×10vials", price:75, cat:"glp1"},
   {code:"CS10",name:"Cagrisema (5+5)",spec:"10mg×10vials",price:165,cat:"glp1"},
   {code:"CS20",name:"Cagrisema (10+10)",spec:"20mg×10vials",price:200,cat:"glp1"},
-  {code:"CGL2",name:"Cagrilintide",spec:"2mg×10vials",price:60, cat:"glp1"},
-  {code:"CGL5",name:"Cagrilintide",spec:"5mg×10vials",price:98, cat:"glp1"},
-  {code:"CGL10",name:"Cagrilintide",spec:"10mg×10vials",price:188,cat:"glp1"},
-  {code:"DU5", name:"Dulaglutide", spec:"5mg×10vials", price:148,cat:"glp1"},
-  {code:"DU10",name:"Dulaglutide",spec:"10mg×10vials",price:260,cat:"glp1"},
-  {code:"MAZ", name:"Mazdutide",  spec:"10mg×10vials",price:220,cat:"glp1"},
+  {code:"CGL/Cag",name:"Cagrilintide",spec:"2mg×10vials",price:60, cat:"glp1"},
+  {code:"CGL/Cag",name:"Cagrilintide",spec:"5mg×10vials",price:98, cat:"glp1"},
+  {code:"CGL/Cag",name:"Cagrilintide",spec:"10mg×10vials",price:188,cat:"glp1"},
+  {code:"Dulaglutide", name:"Dulaglutide", spec:"5mg×10vials", price:148,cat:"glp1"},
+  {code:"Dulaglutide",name:"Dulaglutide",spec:"10mg×10vials",price:260,cat:"glp1"},
+  {code:"Mazdutide", name:"Mazdutide",  spec:"10mg×10vials",price:220,cat:"glp1"},
 
   // ── HGH / Growth Hormone ──
   {code:"CD5", name:"CJC-1295 w/ DAC",spec:"5mg×10vials", price:153,cat:"gh"},
   {code:"CND5",name:"CJC-1295 w/o DAC",spec:"5mg×10vials",price:85, cat:"gh"},
   {code:"CND10",name:"CJC-1295 w/o DAC",spec:"10mg×10vials",price:136,cat:"gh"},
-  {code:"CP10",name:"CJC-1295+IPA (5+5)",spec:"10mg×10vials",price:106,cat:"gh"},
+  {code:"CP10",name:"CJC-1295 Without DAC 5mg+IPA 5mg",spec:"10mg×10vials",price:106,cat:"gh"},
   {code:"G65", name:"GHRP-6", spec:"5mg×10vials", price:31, cat:"gh"},
   {code:"G610",name:"GHRP-6", spec:"10mg×10vials",price:49, cat:"gh"},
   {code:"G25", name:"GHRP-2", spec:"5mg×10vials", price:31, cat:"gh"},
@@ -398,8 +398,8 @@ const products=[
   {code:"G215",name:"GHRP-2", spec:"15mg×10vials",price:68, cat:"gh"},
   {code:"IP5", name:"Ipamorelin", spec:"5mg×10vials", price:40, cat:"gh"},
   {code:"IP10",name:"Ipamorelin",spec:"10mg×10vials",price:71, cat:"gh"},
-  {code:"SMO5",name:"Sermorelin Acetate",spec:"5mg×10vials",price:71, cat:"gh"},
-  {code:"SMO10",name:"Sermorelin Acetate",spec:"10mg×10vials",price:129,cat:"gh"},
+  {code:"SMO-5",name:"Sermorelin Acetate",spec:"5mg×10vials",price:71, cat:"gh"},
+  {code:"SMO-10",name:"Sermorelin Acetate",spec:"10mg×10vials",price:129,cat:"gh"},
   {code:"TSM5",name:"Tesamorelin",spec:"5mg×10vials",price:94, cat:"gh"},
   {code:"TSM10",name:"Tesamorelin",spec:"10mg×10vials",price:169,cat:"gh"},
   {code:"TSM20",name:"Tesamorelin",spec:"20mg×10vials",price:329,cat:"gh"},
@@ -407,6 +407,7 @@ const products=[
   {code:"IG1", name:"IGF-1 LR3",spec:"1mg×10vials",  price:176,cat:"gh"},
   {code:"IGD", name:"IGF-DES", spec:"2mg×10vials",  price:50, cat:"gh"},
   {code:"PMF", name:"PEG MGF",  spec:"2mg×10vials",  price:83, cat:"gh"},
+  {code:"FMP2",n:"PEG-MGF",s:"2mg×10vials",p:82,c:"gh"},
 
   // ── Repair / Recovery ──
   {code:"BB10",name:"BPC157+TB500 (5+5)",spec:"10mg×10vials",price:89, cat:"repair"},
@@ -422,10 +423,10 @@ const products=[
   {code:"2S50",name:"SS-31",spec:"50mg×10vials",price:400,cat:"repair"},
   {code:"MS10",name:"MOTS-C",spec:"10mg×10vials",price:59, cat:"repair"},
   {code:"MS40",name:"MOTS-C",spec:"40mg×10vials",price:224,cat:"repair"},
-  {code:"AHK20",name:"AHK-CU",spec:"20mg×10vials",price:32, cat:"repair"},
-  {code:"AHK50",name:"AHK-CU",spec:"50mg×10vials",price:60, cat:"repair"},
-  {code:"B732",name:"B7-33",spec:"2mg×10vials", price:57, cat:"repair"},
-  {code:"B7310",name:"B7-33",spec:"10mg×10vials",price:197,cat:"repair"},
+  {code:"AHK-CU",name:"AHK-CU",spec:"20mg×10vials",price:32, cat:"repair"},
+  {code:"AHK-CU",name:"AHK-CU",spec:"50mg×10vials",price:60, cat:"repair"},
+  {code:"B7-33",name:"B7-33",spec:"2mg×10vials", price:57, cat:"repair"},
+  {code:"B7-33",name:"B7-33",spec:"10mg×10vials",price:197,cat:"repair"},
   {code:"BC5", name:"BPC 157",spec:"5mg×10vials", price:40, cat:"repair"},
   {code:"BC10",name:"BPC 157",spec:"10mg×10vials",price:64, cat:"repair"},
   {code:"BT5", name:"TB500 (Thymosin B4)",spec:"5mg×10vials",price:64, cat:"repair"},
@@ -440,18 +441,18 @@ const products=[
   {code:"DS10", name:"DSIP",spec:"10mg×10vials",price:82, cat:"antiage"},
   {code:"5AD",  name:"AOD 9064",spec:"5mg×10vials", price:94, cat:"antiage"},
   {code:"10AD", name:"AOD 9064",spec:"10mg×10vials",price:176,cat:"antiage"},
-  {code:"LL37", name:"LL-37",spec:"5mg×10vials", price:172,cat:"antiage"},
-  {code:"FOXO2",name:"FOXO4-DRI",spec:"2mg×10vials", price:92, cat:"antiage"},
-  {code:"FOXO10",name:"FOXO4-DRI",spec:"10mg×10vials",price:300,cat:"antiage"},
-  {code:"ADM5", name:"ADMAX",spec:"5mg×10vials",  price:80, cat:"antiage"},
-  {code:"ADM10",name:"ADMAX",spec:"10mg×10vials",price:110,cat:"antiage"},
-  {code:"P21",  name:"P21 (P021)",spec:"5mg×10vials",price:294,cat:"antiage"},
+  {code:"375", name:"LL-37",spec:"5mg×10vials", price:172,cat:"antiage"},
+  {code:"FOX04-DRI",name:"FOXO4-DRI",spec:"2mg×10vials", price:92, cat:"antiage"},
+  {code:"FOX04-DRI",name:"FOXO4-DRI",spec:"10mg×10vials",price:300,cat:"antiage"},
+  {code:"ADMAX", name:"ADMAX",spec:"5mg×10vials",  price:80, cat:"antiage"},
+  {code:"ADMAX",name:"ADMAX",spec:"10mg×10vials",price:110,cat:"antiage"},
+  {code:"P21(P021)",  name:"P21 (P021)",spec:"5mg×10vials",price:294,cat:"antiage"},
   {code:"5AM",  name:"5-AMINO-1MQ",spec:"5mg×10vials", price:47, cat:"antiage"},
   {code:"50AM", name:"5-AMINO-1MQ",spec:"50mg×10vials",price:106,cat:"antiage"},
   {code:"AR50", name:"Aicar",spec:"50mg×10vials",price:64, cat:"antiage"},
   {code:"ET10", name:"Epithalon",spec:"10mg×10vials",price:42, cat:"antiage"},
   {code:"ET50", name:"Epithalon",spec:"50mg×10vials",price:132,cat:"antiage"},
-  {code:"Frag", name:"Frag 17-23",spec:"10mg×10vials",price:73, cat:"antiage"},
+  {code:"Frag 17-23", name:"Frag 17-23",spec:"10mg×10vials",price:73, cat:"antiage"},
 
   // ── Skincare / Beauty ──
   {code:"NP810",name:"SNAP-8",spec:"2mg×10vials",price:42, cat:"skincare"},
@@ -488,21 +489,21 @@ const products=[
   {code:"OT10",name:"Oxytocin Acetate",spec:"10mg×10vials",price:89, cat:"research"},
   {code:"P41", name:"PT-141",spec:"10mg×10vials",price:66, cat:"research"},
   {code:"B12", name:"B12",spec:"10mg×10vials",price:20, cat:"research"},
-  {code:"OREB",name:"Orexin B",spec:"10mg×10vials",price:230,cat:"research"},
-  {code:"OREA",name:"Orexin A",spec:"10mg×10vials",price:560,cat:"research"},
-  {code:"CAR", name:"Cardiogen",spec:"20mg×10vials",price:97, cat:"research"},
-  {code:"CTX", name:"Cartalax",spec:"20mg×10vials",price:90, cat:"research"},
-  {code:"CORT",name:"Cortagen",spec:"20mg×10vials",price:97, cat:"research"},
-  {code:"CRY", name:"Crystagen",spec:"20mg×10vials",price:93, cat:"research"},
-  {code:"PTD", name:"PTD-DBM",spec:"1mg×10vials", price:60, cat:"research"},
-  {code:"BRON",name:"Bronchogen",spec:"20mg×10vials",price:93, cat:"research"},
+  {code:"Orexin B",name:"Orexin B",spec:"10mg×10vials",price:230,cat:"research"},
+  {code:"Orexin A",name:"Orexin A",spec:"10mg×10vials",price:560,cat:"research"},
+  {code:"Cardiogen", name:"Cardiogen",spec:"20mg×10vials",price:97, cat:"research"},
+  {code:"Cartalax", name:"Cartalax",spec:"20mg×10vials",price:90, cat:"research"},
+  {code:"Cortagen",name:"Cortagen",spec:"20mg×10vials",price:97, cat:"research"},
+  {code:"Crystagen", name:"Crystagen",spec:"20mg×10vials",price:93, cat:"research"},
+  {code:"PTD-1", name:"PTD-DBM",spec:"1mg×10vials", price:60, cat:"research"},
+  {code:"Bron",name:"Bronchogen",spec:"20mg×10vials",price:93, cat:"research"},
   {code:"XT100",name:"Botulinum Toxin",spec:"100iu×10vials",price:155,cat:"research"},
   {code:"EPO", name:"EPO",spec:"3000iu×10vials",price:60, cat:"research"},
-  {code:"PE22",name:"PE-22-28",spec:"10mg×10vials",price:72, cat:"research"},
-  {code:"PNC", name:"PNC-27",spec:"5mg×10vials", price:84, cat:"research"},
-  {code:"GDF8",name:"GDF-8",spec:"1mg×10vials", price:180,cat:"research"},
+  {code:"PE-22-28",name:"PE-22-28",spec:"10mg×10vials",price:72, cat:"research"},
+  {code:"PNC-27", name:"PNC-27",spec:"5mg×10vials", price:84, cat:"research"},
+  {code:"GDF-8",name:"GDF-8",spec:"1mg×10vials", price:180,cat:"research"},
   {code:"AC1", name:"ACE 031",spec:"1mg×10vials", price:40, cat:"research"},
-  {code:"ACTH",name:"ACTH 1-39",spec:"5mg×10vials",price:60, cat:"research"},
+  {code:"ACTH 1-39",name:"ACTH 1-39",spec:"5mg×10vials",price:60, cat:"research"},
   {code:"TY10",name:"Thymalin",spec:"10mg×10vials",price:66, cat:"research"},
   {code:"RA10",name:"Ara-290",spec:"10mg×10vials",price:73, cat:"research"},
   {code:"MIC", name:"MIC (lipo C+B12)",spec:"10mg×10vials",price:100,cat:"research"},
@@ -529,13 +530,13 @@ function save(){localStorage.setItem("peptide_cart",JSON.stringify(cart))}
 // GROUPING
 // ═══════════════════════════════════════════
 function groupProducts(list){
-  // Deduplicate by code
-  const seen=new Set();
-  const deduped=list.filter(p=>{if(seen.has(p.code))return false;seen.add(p.code);return true});
+  // Group by product name first, THEN deduplicate variant codes within each group
   const map={};
-  deduped.forEach(p=>{
+  list.forEach(p=>{
     if(!map[p.name]) map[p.name]={name:p.name,cat:p.cat,items:[]};
-    map[p.name].items.push(p);
+    // Only add variant if this exact code+spec isn't already in the group
+    const exists=map[p.name].items.some(x=>x.code===p.code&&x.spec===p.spec&&x.price===p.price);
+    if(!exists) map[p.name].items.push(p);
   });
   return Object.values(map);
 }
