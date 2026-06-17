@@ -58,6 +58,8 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .filter-btn{padding:7px 16px;border-radius:20px;border:1.5px solid #e0e2e6;background:#fff;color:#5f6368;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .2s;user-select:none}
 .filter-btn:hover{border-color:#c4c7cc;color:#1a1a2e}
 .filter-btn.active{background:#2596ff;border-color:#2596ff;color:#fff;box-shadow:0 2px 8px rgba(37,150,255,.25)}
+.filter-btn .cat-desc{display:block;font-size:8px;opacity:.4;font-weight:400;margin-top:1px}
+.filter-btn.active .cat-desc{opacity:.7}
 .results-count{font-size:11px;color:#9aa0a8;padding:0 16px;max-width:820px;margin:6px auto 0}
 
 /* ===== PRODUCT LIST ===== */
@@ -204,7 +206,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 </head>
 <body>
 
-<div class="top-bar">🇺🇸 Trusted By Researchers Nationwide · Professional Grade · Research Use Only</div>
+<div class="top-bar">Trusted By Researchers Nationwide · Professional Grade · Research Use Only</div>
 
 <!-- Header -->
 <div class="header">
@@ -212,7 +214,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
     <div class="header-logo">★</div>
     <div class="header-text">
       <h1>Premium Peptide <span>Supply Co.</span></h1>
-      <div class="sub">American-Grade Quality · Lab Tested · Discreet Shipping</div>
+      <div class="sub">Research Grade · Lab Tested · Discreet Shipping</div>
     </div>
     <div class="header-badge">
       <div class="val">140+</div>
@@ -239,7 +241,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
   </div>
   <div class="badge-item">
     <div class="badge-icon">📦</div>
-    <div class="badge-label"><strong>Free Shipping</strong>On orders $200+</div>
+    <div class="badge-label"><strong>Bulk Discount</strong>Volume Pricing</div>
   </div>
   <div class="badge-item">
     <div class="badge-icon">🔒</div>
@@ -251,7 +253,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 <div class="offer-banner">
   <div class="offer-inner">
     <div class="offer-text">
-      🎯 <strong>Summer Sale:</strong> 5% OFF sitewide + free shipping over $200
+      🎯 <strong>Limited Time Offer:</strong> 5% OFF on all products
     </div>
     <div class="offer-badge">LIMITED TIME</div>
   </div>
@@ -269,13 +271,13 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 <div class="filter-wrap">
   <div class="filter" id="filterBar">
     <button class="filter-btn active" data-cat="all" onclick="setCat('all')">All</button>
-    <button class="filter-btn" data-cat="glp1" onclick="setCat('glp1')">💉 GLP-1</button>
-    <button class="filter-btn" data-cat="gh" onclick="setCat('gh')">💪 HGH</button>
-    <button class="filter-btn" data-cat="repair" onclick="setCat('repair')">🔧 Repair</button>
-    <button class="filter-btn" data-cat="antiage" onclick="setCat('antiage')">⏳ Anti-Aging</button>
-    <button class="filter-btn" data-cat="skincare" onclick="setCat('skincare')">💎 Skincare</button>
-    <button class="filter-btn" data-cat="supplies" onclick="setCat('supplies')">🧪 Supplies</button>
-    <button class="filter-btn" data-cat="research" onclick="setCat('research')">📋 Other</button>
+    <button class="filter-btn" data-cat="glp1" onclick="setCat('glp1')">💉 GLP-1 <span class="cat-desc">Weight Loss</span></button>
+    <button class="filter-btn" data-cat="gh" onclick="setCat('gh')">💪 HGH <span class="cat-desc">Muscle & Growth</span></button>
+    <button class="filter-btn" data-cat="repair" onclick="setCat('repair')">🔧 Repair <span class="cat-desc">Tissue Healing</span></button>
+    <button class="filter-btn" data-cat="antiage" onclick="setCat('antiage')">⏳ Anti-Aging <span class="cat-desc">Longevity</span></button>
+    <button class="filter-btn" data-cat="skincare" onclick="setCat('skincare')">💎 Skincare <span class="cat-desc">Collagen & Beauty</span></button>
+    <button class="filter-btn" data-cat="supplies" onclick="setCat('supplies')">🧪 Supplies <span class="cat-desc">BAC Water</span></button>
+    <button class="filter-btn" data-cat="research" onclick="setCat('research')">📋 Other <span class="cat-desc">Research Chems</span></button>
   </div>
 </div>
 
@@ -289,9 +291,9 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 
 <!-- Footer -->
 <div class="footer">
-  <strong>Premium Peptide Supply Co.</strong> · American-Grade Research Products<br>
-  All prices in USD · Minimum order: 1 box per product · Free shipping on orders $200+<br>
-  <div class="version" style="margin-top:6px">© 2026 Premium Peptide Supply Co. · Privacy Policy · Terms of Service</div>
+  如有任何疑问或需要订购，请通过 WhatsApp联系我们。<br>
+  专业级 · 优质产品 · 值得信赖的供应商<br>
+  <div class="version" style="margin-top:6px">Privacy Policy · Terms of Service</div>
 </div>
 
 <!-- Cart bar -->
