@@ -110,58 +110,9 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .btn-secondary:hover{border-color:#bbb;color:#1a1a2e}
 
 /* ===== ORDER MODAL — Mobile Checkout Style ===== */
-.order-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;display:none;justify-content:center;align-items:center;padding:16px;backdrop-filter:blur(6px)}
-.order-overlay.open{display:flex}
-.order-modal{background:#fff;border-radius:20px;width:100%;max-width:400px;padding:0 0 16px;animation:modalIn .3s cubic-bezier(.4,0,.2,1);box-shadow:0 24px 80px rgba(0,0,0,.18);overflow:hidden}
-@keyframes modalIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
-
-/* Urgency banner */
-.urgency-banner{background:#ff4757;color:#fff;padding:10px 18px;font-size:12px;font-weight:600;text-align:center;letter-spacing:.3px;display:flex;align-items:center;justify-content:center;gap:6px}
-.urgency-banner .icon{font-size:15px}
-
-/* Countdown card */
-.countdown-card{background:#fff7e6;margin:14px 16px 0;border-radius:14px;padding:18px 16px 14px;text-align:center;border:1px solid #ffe0a0}
-.countdown-label{font-size:11px;color:#cc8a00;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
-.countdown-time{font-size:42px;font-weight:800;color:#1a1a2e;font-variant-numeric:tabular-nums;letter-spacing:2px;line-height:1.1;font-family:'SF Mono','Menlo','Consolas',monospace}
-.countdown-sub{font-size:11px;color:#aa7000;margin-top:4px;opacity:.8}
-
-/* Order summary inside modal */
-.order-items-wrap{padding:12px 16px 0;max-height:220px;overflow-y:auto}
-.order-item{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f1f3;font-size:13px}
-.order-item:last-child{border-bottom:none}
-.order-item-left{display:flex;align-items:center;gap:6px;flex:1;min-width:0}
-.order-item-qty{font-weight:700;color:#2596ff;min-width:24px}
-.order-item-name{color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.order-item-spec{font-size:11px;color:#9aa0a8;margin-left:4px}
-.order-item-price{font-weight:700;color:#1a1a2e;font-family:monospace;font-size:13px}
-.order-divider{height:1px;background:linear-gradient(to right,transparent,#e0e2e6,transparent);margin:4px 16px}
-.order-total-box{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;font-size:14px}
-.order-total-box .lbl{color:#6b7280;font-weight:500}
-.order-total-box .val{color:#2596ff;font-size:20px;font-weight:800;font-family:monospace}
-
-/* Discount bar */
-.discount-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:#f0fff0;border-top:1px solid #e0f0e0;border-bottom:1px solid #e0f0e0;font-size:12px;margin:4px 0}
-.discount-bar .left{display:flex;align-items:center;gap:5px;color:#1a7a3a;font-weight:500}
-.discount-bar .left .check{color:#1bc47d;font-size:14px}
-.discount-bar .terms{color:#9aa0a8;font-size:10px;cursor:pointer;text-decoration:underline}
-
-/* Action area */
-.order-action-wrap{padding:10px 16px 0}
-.opt-out{text-align:center;font-size:11px;color:#9aa0a8;margin-bottom:8px;cursor:pointer}
-.opt-out:hover{color:#ff4757}
-.btn-checkout{width:100%;padding:14px;border-radius:12px;border:none;background:linear-gradient(135deg,#2596ff,#1a6bb5);color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px;box-shadow:0 4px 16px rgba(37,150,255,.3)}
-.btn-checkout:hover{box-shadow:0 6px 24px rgba(37,150,255,.4);transform:translateY(-1px)}
-.btn-checkout:active{transform:scale(.98)}
-
-/* ===== CONFIRMATION ===== */
-.confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:400;display:none;justify-content:center;align-items:center;padding:20px;backdrop-filter:blur(6px)}
-.confirm-overlay.open{display:flex}
-.confirm-modal{background:#fff;border-radius:20px;width:100%;max-width:400px;padding:32px 24px 24px;text-align:center;animation:modalIn .3s cubic-bezier(.4,0,.2,1);box-shadow:0 24px 80px rgba(0,0,0,.18)}
-.confirm-icon{font-size:52px;margin-bottom:12px}
-.confirm-modal h3{font-size:20px;font-weight:800;margin-bottom:6px}
-.confirm-modal p{font-size:13px;color:#6b7280;line-height:1.6}
-.confirm-done{margin-top:18px;padding:12px 40px;border-radius:12px;border:none;background:linear-gradient(135deg,#2596ff,#1a6bb5);color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s}
-.confirm-done:hover{box-shadow:0 4px 12px rgba(37,150,255,.3)}
+/* ===== COUNTDOWN BANNER (inside cart) ===== */
+.countdown-bar{background:#ff4757;color:#fff;padding:8px 16px;font-size:11px;font-weight:600;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;flex-shrink:0}
+.countdown-bar .timer{font-family:'SF Mono','Menlo','Consolas',monospace;font-size:13px;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:6px;margin:0 2px}
 
 /* ===== TOAST ===== */
 .toast-container{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;display:flex;flex-direction:column;gap:6px;align-items:center;pointer-events:none}
@@ -268,72 +219,32 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
       <button onclick="toggleCart()">✕</button>
     </div>
     <div class="cart-items" id="cartItems"></div>
-    <div class="cart-ftr">
+    <!-- Default cart footer -->
+    <div class="cart-ftr" id="cartFooter">
       <div class="cart-total">
         <span>Total</span>
         <span class="total-price" id="cartTotalDrawer">$0</span>
       </div>
       <div class="cart-actions">
-        <button class="btn-primary" onclick="openCheckout()">📦 Proceed to Checkout</button>
-        <button class="btn-secondary" onclick="clearCart()">Clear</button>
+        <button class="btn-primary" onclick="confirmOrder()">✅ Confirm Order</button>
+        <button class="btn-secondary" onclick="clearCart()">🗑 Clear All</button>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- ═══ CHECKOUT MODAL — Mobile App Style ═══ -->
-<div class="order-overlay" id="orderOverlay" onclick="if(event.target===this)closeCheckout()">
-  <div class="order-modal">
-
-    <!-- Urgency banner -->
-    <div class="urgency-banner">
-      <span class="icon">⏰</span>
-      <span>Hurry! Your discount is about to expire!</span>
-    </div>
-
-    <!-- Countdown -->
-    <div class="countdown-card">
-      <div class="countdown-label">Limited Time Offer</div>
-      <div class="countdown-time" id="countdownDisplay">14:59</div>
-      <div class="countdown-sub">Complete your order within 15 minutes to secure best pricing</div>
-    </div>
-
-    <!-- Order items -->
-    <div class="order-items-wrap" id="orderItemsWrap"></div>
-
-    <!-- Discount bar -->
-    <div class="discount-bar">
-      <div class="left">
-        <span class="check">✓</span>
-        <span>Limited time · <strong>Free shipping</strong> on all orders</span>
+    <!-- Confirmation footer (hidden initially) -->
+    <div class="cart-ftr" id="confirmFooter" style="display:none">
+      <div style="font-size:11px;color:#6b7280;margin-bottom:8px;line-height:1.5;text-align:center">
+        Please copy the order list and send it to<br>
+        your dedicated customer service representative <strong>ASAP</strong>
       </div>
-      <span class="terms" onclick="showToast('Free shipping applied automatically at checkout','info')">Details</span>
+      <div class="cart-total" style="margin-bottom:4px">
+        <span>Total</span>
+        <span class="total-price" id="confirmTotal">$0</span>
+      </div>
+      <div class="cart-actions">
+        <button class="btn-primary" id="copyOrderBtn" onclick="copyOrder()">📋 Copy Order List</button>
+        <button class="btn-secondary" onclick="closeConfirmOrder()">Close</button>
+      </div>
     </div>
-
-    <!-- Total -->
-    <div class="order-total-box">
-      <span class="lbl">Order Total</span>
-      <span class="val" id="checkoutTotal">$0</span>
-    </div>
-
-    <!-- Action -->
-    <div class="order-action-wrap">
-      <div class="opt-out" onclick="closeCheckout()">I'll pass on this offer →</div>
-      <button class="btn-checkout" onclick="completeOrder()">
-        📋 Copy Order &amp; Contact WhatsApp
-      </button>
-    </div>
-
-  </div>
-</div>
-
-<!-- Confirmation modal -->
-<div class="confirm-overlay" id="confirmOverlay" onclick="if(event.target===this)closeConfirm()">
-  <div class="confirm-modal">
-    <div class="confirm-icon">🎉</div>
-    <h3>Order Placed!</h3>
-    <p id="confirmText">Your order has been received. We'll contact you to confirm shipping and payment details.</p>
-    <button class="confirm-done" onclick="closeConfirm()">Done ✓</button>
   </div>
 </div>
 
@@ -641,9 +552,15 @@ function updateUI(){
 }
 
 function renderCart(){
-  const el=document.getElementById("cartItems");
+  const el=document.getElementById("cartListItems");
+  const empty=document.getElementById("cartEmpty");
   const items=Object.entries(cart);
-  if(!items.length){el.innerHTML='<div class="cart-empty"><div class="empty-icon">🛒</div>Your cart is empty</div>';return}
+  if(!items.length){
+    el.innerHTML='';
+    empty.style.display='block';
+    return;
+  }
+  empty.style.display='none';
   el.innerHTML=items.map(([c,q])=>{
     const p=products.find(x=>x.code===c);
     if(!p) return"";
@@ -664,36 +581,36 @@ function renderCart(){
 
 function toggleCart(){
   const o=document.getElementById("cartOverlay");
-  if(o.classList.contains("open")){o.classList.remove("open");return}
-  renderCart();o.classList.add("open");
+  if(o.classList.contains("open")){
+    // Reset cart view on close
+    document.getElementById("cartFooter").style.display='';
+    document.getElementById("confirmFooter").style.display='none';
+    document.getElementById("countdownBar").style.display='none';
+    if(countdownTimer){clearInterval(countdownTimer);countdownTimer=null}
+    o.classList.remove("open");
+    return;
+  }
+  renderCart();
+  document.getElementById("cartFooter").style.display='';
+  document.getElementById("confirmFooter").style.display='none';
+  document.getElementById("countdownBar").style.display='none';
+  o.classList.add("open");
 }
 
 // ══════════════════════════════════════════════════════
-// CHECKOUT — Mobile App Style (No Form!)
+// ORDER FLOW (Matches manufacturer-direct.top)
 // ══════════════════════════════════════════════════════
-function openCheckout(){
+function confirmOrder(){
   const items=Object.entries(cart);
   if(!items.length){showToast("Cart is empty");return}
-  document.getElementById("cartOverlay").classList.remove("open");
   
-  // Build order items display
-  const wrap=document.getElementById("orderItemsWrap");
-  wrap.innerHTML=items.map(([c,q])=>{
-    const p=products.find(x=>x.code===c);
-    if(!p) return"";
-    return `<div class="order-item">
-      <div class="order-item-left">
-        <span class="order-item-qty">×${q}</span>
-        <span class="order-item-name">${p.name}</span>
-        <span class="order-item-spec">${p.spec}</span>
-      </div>
-      <span class="order-item-price">$${q*p.price}</span>
-    </div>`;
-  }).join("");
+  // Switch footer to confirmation view
+  document.getElementById("cartFooter").style.display='none';
+  document.getElementById("confirmFooter").style.display='';
+  document.getElementById("confirmTotal").textContent="$"+totalPrice();
   
-  document.getElementById("checkoutTotal").textContent="$"+totalPrice();
-  
-  // Start countdown
+  // Show countdown
+  document.getElementById("countdownBar").style.display='flex';
   countdownRemaining=900;
   updateCountdown();
   if(countdownTimer) clearInterval(countdownTimer);
@@ -702,12 +619,13 @@ function openCheckout(){
     if(countdownRemaining<=0){clearInterval(countdownTimer);countdownTimer=null}
     updateCountdown();
   },1000);
-  
-  document.getElementById("orderOverlay").classList.add("open");
 }
 
-function closeCheckout(){
-  document.getElementById("orderOverlay").classList.remove("open");
+function closeConfirmOrder(){
+  // Back to cart view
+  document.getElementById("cartFooter").style.display='';
+  document.getElementById("confirmFooter").style.display='none';
+  document.getElementById("countdownBar").style.display='none';
   if(countdownTimer){clearInterval(countdownTimer);countdownTimer=null}
 }
 
@@ -718,9 +636,7 @@ function updateCountdown(){
     String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
 }
 
-function closeConfirm(){document.getElementById("confirmOverlay").classList.remove("open")}
-
-function completeOrder(){
+function copyOrder(){
   // Build order text for clipboard
   const items=Object.entries(cart);
   let orderText="━━━ ORDER ━━━\n\n";
@@ -733,7 +649,6 @@ function completeOrder(){
   
   // Copy to clipboard
   navigator.clipboard.writeText(orderText).catch(()=>{
-    // Fallback for older browsers
     const ta=document.createElement('textarea');
     ta.value=orderText;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
   });
@@ -743,16 +658,21 @@ function completeOrder(){
   history.push({date:new Date().toISOString(),cart:{...cart},total:totalPrice(),items:totalCount()});
   localStorage.setItem("peptide_orders",JSON.stringify(history));
   
-  closeCheckout();
-  clearCart();
+  // Change button state
+  const btn=document.getElementById("copyOrderBtn");
+  btn.textContent="✅ Copied Successfully!";
+  btn.style.background="#1bc47d";
+  btn.style.boxShadow="0 2px 8px rgba(27,196,125,.3)";
   
-  document.getElementById("confirmText").innerHTML=
-    "✅ Order copied to clipboard!<br><br>"+
-    "<strong>"+totalCount()+" boxes · $"+totalPrice()+"</strong><br><br>"+
-    "📞 Please contact our <strong>WhatsApp customer service</strong><br>"+
-    "to confirm and complete your order.<br><br>"+
-    "Paste the copied text in your WhatsApp chat.";
-  document.getElementById("confirmOverlay").classList.add("open");
+  // Clear cart after copy
+  cart={};save();updateUI();syncCartButtons();
+  renderCart();
+  
+  setTimeout(()=>{
+    btn.textContent="📋 Copy Order List";
+    btn.style.background="";
+    btn.style.boxShadow="";
+  },3000);
 }
 
 // ══════════════════════════════════════════════════════
