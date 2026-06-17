@@ -320,7 +320,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
     <div class="order-action-wrap">
       <div class="opt-out" onclick="closeCheckout()">I'll pass on this offer →</div>
       <button class="btn-checkout" onclick="completeOrder()">
-        ✅ Complete Order &bull; Pay Later
+        📋 Copy Order &amp; Contact WhatsApp
       </button>
     </div>
 
@@ -721,6 +721,23 @@ function updateCountdown(){
 function closeConfirm(){document.getElementById("confirmOverlay").classList.remove("open")}
 
 function completeOrder(){
+  // Build order text for clipboard
+  const items=Object.entries(cart);
+  let orderText="━━━ ORDER ━━━\n\n";
+  items.forEach(([c,q],i)=>{
+    const p=products.find(x=>x.code===c);
+    if(!p) return;
+    orderText+=`${i+1}. ${p.name} (#${p.code})\n   ${p.spec} × ${q} = $${q*p.price}\n\n`;
+  });
+  orderText+=`──────────────────\nTOTAL: $${totalPrice()} (${totalCount()} boxes)\n──────────────────\n`;
+  
+  // Copy to clipboard
+  navigator.clipboard.writeText(orderText).catch(()=>{
+    // Fallback for older browsers
+    const ta=document.createElement('textarea');
+    ta.value=orderText;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+  });
+  
   // Save order to history
   const history=JSON.parse(localStorage.getItem("peptide_orders")||"[]");
   history.push({date:new Date().toISOString(),cart:{...cart},total:totalPrice(),items:totalCount()});
@@ -730,9 +747,11 @@ function completeOrder(){
   clearCart();
   
   document.getElementById("confirmText").innerHTML=
-    "Your order has been received and saved.<br><br>"+
+    "✅ Order copied to clipboard!<br><br>"+
     "<strong>"+totalCount()+" boxes · $"+totalPrice()+"</strong><br><br>"+
-    "We will contact you shortly to confirm shipping and payment details.";
+    "📞 Please contact our <strong>WhatsApp customer service</strong><br>"+
+    "to confirm and complete your order.<br><br>"+
+    "Paste the copied text in your WhatsApp chat.";
   document.getElementById("confirmOverlay").classList.add("open");
 }
 
