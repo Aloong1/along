@@ -179,6 +179,23 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .btn-checkout:hover{box-shadow:0 6px 24px rgba(37,150,255,.4);transform:translateY(-1px)}
 .btn-checkout:active{transform:scale(.98)}
 
+/* ===== REFERENCE IMAGE STYLE (orange theme) ===== */
+.order-modal{position:relative;border-top:3px solid #ff8c00}
+.ref-header{padding:16px 16px 0;font-size:16px;font-weight:800;color:#1a1a2e;letter-spacing:.3px;text-transform:uppercase;text-align:left}
+.ref-countdown-wrap{background:#fff3e0;margin:10px 16px 0;border-radius:14px;padding:12px 12px 10px;text-align:center}
+.ref-countdown-label{font-size:9px;color:#cc7a00;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1px}
+.ref-countdown-time{font-size:38px;font-weight:800;color:#1a1a2e;font-variant-numeric:tabular-nums;letter-spacing:3px;line-height:1.1;font-family:'SF Mono','Menlo','Consolas',monospace}
+.ref-offer{display:flex;align-items:flex-start;gap:10px;margin:12px 16px 0;padding:0}
+.ref-offer-icon{width:22px;height:22px;min-width:22px;border-radius:50%;background:#2596ff;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px}
+.ref-offer-title{font-size:13px;font-weight:600;color:#1a1a2e}
+.ref-offer-sub{font-size:11px;color:#9aa0a8;margin-top:1px}
+.ref-divider{border:none;border-top:1px solid #e8eaed;margin:8px 16px}
+.btn-ref{width:100%;padding:14px;border-radius:14px;border:none;background:#ff8c00;color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(255,140,0,.3);display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-ref:hover{box-shadow:0 6px 24px rgba(255,140,0,.4);transform:translateY(-1px)}
+.btn-ref:active{transform:scale(.98)}
+.ref-disclaimer{text-align:center;font-size:10px;color:#c4c7cc;margin-top:6px;margin-bottom:4px}
+.ref-instruction{font-size:11px;color:#6b7280;padding:4px 16px 0;line-height:1.5;text-align:center}
+
 /* ===== TOAST ===== */
 .toast-container{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;display:flex;flex-direction:column;gap:6px;align-items:center;pointer-events:none}
 .toast{background:#1a1a2e;color:#fff;padding:10px 22px;border-radius:14px;font-size:13px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,.12);opacity:0;transform:translateY(-10px) scale(.95);transition:all .25s;pointer-events:auto;white-space:nowrap;max-width:90vw}
@@ -337,30 +354,26 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 <div class="order-overlay" id="confirmOverlay" onclick="if(event.target===this)closeConfirmPanel()">
   <div class="order-modal">
 
-    <!-- Urgency banner -->
-    <div class="urgency-banner" style="background:#1a1a2e">
-      <span class="icon-circle">!</span>
-      <span>Hurry! Your discount is about to expire!</span>
+    <!-- Header -->
+    <div class="ref-header">Hurry! Your Discount Is Ticking</div>
+
+    <!-- Countdown -->
+    <div class="ref-countdown-wrap">
+      <div class="ref-countdown-label">OVER IN:</div>
+      <div class="ref-countdown-time" id="confirmCountdownDisplay">30:00</div>
     </div>
 
-    <!-- Countdown card -- clean like ref -->
-    <div class="countdown-card" style="margin:14px 16px 0;padding:12px 12px 10px">
-      <div class="countdown-time" id="confirmCountdownDisplay" style="font-size:42px">30:00</div>
-    </div>
-
-    <!-- Discount row -- green check + text -->
-    <div class="discount-bar" style="margin:8px 16px 0;padding:10px 14px">
-      <div class="left">
-        <span class="check-icon">✓</span>
-        <span style="font-size:13px"><strong>Limited Time</strong> Get 5% OFF</span>
+    <!-- Offer -->
+    <div class="ref-offer">
+      <div class="ref-offer-icon">✓</div>
+      <div class="ref-offer-text">
+        <div class="ref-offer-title">Limited Time Offer 5% OFF</div>
+        <div class="ref-offer-sub">Limited stock available, act in order!</div>
       </div>
     </div>
 
-    <!-- View details link -->
-    <div style="text-align:right;padding:2px 18px 0;font-size:11px;color:#9aa0a8;cursor:pointer;flex-shrink:0" onclick="closeConfirmPanel()">View Details →</div>
-
-    <!-- Order items with qty & specs -->
-    <div class="order-items-wrap" id="confirmOrderItems" style="margin-top:6px"></div>
+    <!-- Order items (products with qty & specs) -->
+    <div class="order-items-wrap" id="confirmOrderItems"></div>
 
     <!-- Total -->
     <div class="order-total-box">
@@ -368,18 +381,14 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
       <span class="val" id="confirmTotalPrice">$0</span>
     </div>
 
-    <!-- Instruction -->
-    <div style="font-size:11px;color:#6b7280;padding:6px 16px 0;line-height:1.5;text-align:center;flex-shrink:0">
-      Please copy the order list and send it to<br>
-      your dedicated customer service representative <strong>ASAP</strong>
-    </div>
+    <div class="ref-instruction">Please copy the order list and send it to your dedicated customer service representative ASAP</div>
 
-    <!-- Action -- blue button -->
+    <hr class="ref-divider">
+
+    <!-- Action button -->
     <div class="order-action-wrap">
-      <button class="btn-checkout" id="copyOrderBtn" onclick="copyOrder()" style="margin-bottom:8px">
-        📋 Copy Order List
-      </button>
-      <div class="opt-out" onclick="closeConfirmPanel()">I'll pass on this offer →</div>
+      <button class="btn-ref" onclick="copyOrder()">🛒 Easy Order Now</button>
+      <div class="ref-disclaimer">*Offer valid for limited period</div>
     </div>
 
   </div>
