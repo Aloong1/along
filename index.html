@@ -798,11 +798,13 @@ function copyOrder(){
   });
   orderText+=`──────────────────\nTOTAL: $${totalPrice()} (${totalCount()} boxes)\n──────────────────\n`;
   
-  // Copy to clipboard
-  navigator.clipboard.writeText(orderText).catch(()=>{
-    const ta=document.createElement('textarea');
-    ta.value=orderText;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
-  });
+  // Copy to clipboard (clipboard API requires HTTPS; fallback for HTTP)
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(orderText).catch(()=>fallbackCopy(orderText));
+  } else {
+    fallbackCopy(orderText);
+  }
+  function fallbackCopy(t){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta)}
   
   // Save order to history
   const history=JSON.parse(localStorage.getItem("peptide_orders")||"[]");
