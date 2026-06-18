@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Premium Peptide Supply Co. — Research Grade Peptides</title>
+<title>Research Peptide Supply Catalog | Lab-Grade Peptides</title>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -69,7 +69,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .prod-row:active{background:#f8f9fb}
 .prod-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;position:relative}
 .prod-info{flex:1;min-width:0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.prod-name{font-size:14px;font-weight:600;color:#1a1a2e;letter-spacing:-.2px}
+.prod-name{font-size:14px;font-weight:600;color:#1a1a2e;letter-spacing:-.2px;min-width:0}
 .prod-count{font-size:10px;color:#888;background:#f0f1f3;padding:2px 8px;border-radius:10px;font-weight:500;line-height:18px;flex-shrink:0}
 .prod-cat-tag{font-size:10px;color:#9aa0a8;font-weight:400}
 .prod-range{font-size:13px;font-weight:700;color:#2596ff;flex-shrink:0;margin-left:auto;margin-right:6px}
@@ -82,7 +82,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .var-row:last-child{border-bottom:none}
 .var-row:hover{background:#f0f2f5}
 .var-code{color:#888;font-weight:500;min-width:50px;font-size:11px;font-family:'SF Mono','Menlo','Consolas',monospace}
-.var-spec{color:#6b7280;font-size:12px}
+.var-spec{color:#6b7280;font-size:12px;min-width:0}
 .var-price{font-weight:700;color:#1a1a2e;margin-left:auto;flex-shrink:0;font-size:13px}
 .var-add{border:none;border-radius:8px;padding:5px 12px;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;white-space:nowrap;transition:all .15s}
 .var-add.add{background:#f0f2f5;color:#1a1a2e}
@@ -115,8 +115,8 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .cart-item{display:flex;align-items:center;padding:10px 16px;gap:10px;border-bottom:1px solid #f5f6f7;animation:itemIn .2s ease}
 @keyframes itemIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
 .cart-item-info{flex:1;min-width:0}
-.cart-item-name{font-size:13px;font-weight:600}
-.cart-item-spec{font-size:11px;color:#9aa0a8;margin-top:1px}
+.cart-item-name{font-size:13px;font-weight:600;overflow-wrap:anywhere}
+.cart-item-spec{font-size:11px;color:#9aa0a8;margin-top:1px;overflow-wrap:anywhere}
 .cart-qty{display:flex;align-items:center;gap:6px;flex-shrink:0}
 .cart-qty button{width:26px;height:26px;border-radius:50%;border:1px solid #e0e2e6;background:transparent;color:#5f6368;font-size:13px;cursor:pointer;font-weight:500}
 .cart-qty button:hover{border-color:#2596ff;color:#2596ff}
@@ -149,7 +149,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 /* ===== CONFIRMATION OVERLAY MODAL ===== */
 .order-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;display:none;justify-content:center;align-items:center;padding:16px;backdrop-filter:blur(6px)}
 .order-overlay.open{display:flex}
-.order-modal{background:#fff;border-radius:20px;width:100%;max-width:400px;padding:0 0 16px;animation:modalIn .3s cubic-bezier(.4,0,.2,1);box-shadow:0 24px 80px rgba(0,0,0,.18);overflow:hidden}
+.order-modal{background:#fff;border-radius:20px;width:100%;max-width:400px;max-height:calc(100dvh - 32px);padding:0 0 16px;animation:modalIn .3s cubic-bezier(.4,0,.2,1);box-shadow:0 24px 80px rgba(0,0,0,.18);overflow-y:auto;overflow-x:hidden}
 @keyframes modalIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
 .urgency-banner{background:#ff3b30;color:#fff;padding:10px 16px;font-size:12px;font-weight:600;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px}
 .urgency-banner .icon-circle{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.2);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
@@ -163,8 +163,8 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .order-item-left{display:flex;align-items:center;gap:5px;flex:1;min-width:0}
 .order-item-qty{font-weight:700;color:#2596ff;min-width:20px;font-size:11px}
 .order-item-name{color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px}
-.order-item-spec{font-size:10px;color:#9aa0a8;margin-left:3px}
-.order-item-price{font-weight:700;color:#1a1a2e;font-family:monospace;font-size:12px}
+.order-item-spec{font-size:10px;color:#9aa0a8;margin-left:3px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.order-item-price{font-weight:700;color:#1a1a2e;font-family:monospace;font-size:12px;flex-shrink:0;margin-left:8px}
 .discount-bar{display:flex;align-items:center;gap:8px;padding:8px 16px;margin:8px 16px 0;background:#f0fff0;border:1px solid #d4edda;border-radius:10px}
 .discount-bar .left{display:flex;align-items:center;gap:6px;color:#155724;font-size:12px;line-height:1.4;flex:1}
 .discount-bar .check-icon{width:18px;height:18px;border-radius:50%;background:#1bc47d;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
@@ -180,7 +180,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 .btn-checkout:active{transform:scale(.98)}
 
 /* ===== REFERENCE IMAGE STYLE (red banner + orange button + red box) ===== */
-.order-modal{position:relative;border-radius:14px;overflow:hidden}
+.order-modal{position:relative;border-radius:14px;overflow-y:auto;overflow-x:hidden}
 .ref-top-banner{background:#dc2626;color:#fff;padding:10px 16px;font-size:13px;font-weight:700;text-align:center;letter-spacing:.3px}
 .ref-white-box{padding:0 16px 16px}
 .ref-upto-btn{display:inline-block;margin:12px auto 8px;background:linear-gradient(135deg,#ff8c00,#f57c00);color:#fff;font-size:11px;font-weight:800;padding:5px 18px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px}
@@ -195,7 +195,7 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 
 /* ===== TOAST ===== */
 .toast-container{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;display:flex;flex-direction:column;gap:6px;align-items:center;pointer-events:none}
-.toast{background:#1a1a2e;color:#fff;padding:10px 22px;border-radius:14px;font-size:13px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,.12);opacity:0;transform:translateY(-10px) scale(.95);transition:all .25s;pointer-events:auto;white-space:nowrap;max-width:90vw}
+.toast{background:#1a1a2e;color:#fff;padding:10px 22px;border-radius:14px;font-size:13px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,.12);opacity:0;transform:translateY(-10px) scale(.95);transition:all .25s;pointer-events:auto;white-space:normal;max-width:90vw;text-align:center;line-height:1.35}
 .toast.show{opacity:1;transform:translateY(0) scale(1)}
 .toast.success{background:#1bc47d}
 .toast.info{background:#2596ff}
@@ -209,12 +209,44 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
 @media(max-width:640px){
   .header-inner{padding:20px 14px 16px;flex-wrap:wrap;gap:10px}
   .header-logo{width:36px;height:36px;font-size:15px}
-  .header-text h1{font-size:16px}
-  .prod-row{padding:10px 12px;gap:6px}
+  .header-text{flex:1;min-width:0}
+  .header-text h1{font-size:16px;line-height:1.25}
+  .header-badge{margin-left:auto;padding:5px 10px}
+  .trust-strip{justify-content:flex-start;padding:0 14px;margin-bottom:8px}
+  .trust-strip span{font-size:9px;padding:3px 8px}
+  .badges-bar{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:0 12px}
+  .badges-bar .badge-item{padding:10px 6px}
+  .offer-banner{padding:0 12px}
+  .offer-banner .offer-inner{align-items:flex-start;padding:12px;gap:10px}
+  .offer-banner .offer-text{font-size:11px}
+  .search-wrap,.filter-wrap,.list-wrap{padding-left:12px;padding-right:12px}
+  .prod-row{display:grid;grid-template-columns:12px minmax(0,1fr) auto 20px;align-items:center;padding:10px 12px;gap:6px}
+  .prod-info{gap:5px}
   .prod-name{font-size:13px}
-  .var-row{padding:7px 12px 7px 28px;font-size:12px}
+  .prod-cat-tag{flex-basis:100%;font-size:9px}
+  .prod-range{font-size:12px;margin-left:0;margin-right:0}
+  .var-row{display:grid;grid-template-columns:48px minmax(0,1fr) auto;align-items:center;padding:8px 12px 9px 28px;font-size:12px;row-gap:6px}
+  .var-code{min-width:0}
+  .var-spec{overflow-wrap:anywhere}
+  .var-price{margin-left:0}
+  .var-add{grid-column:2 / 4;justify-self:stretch;padding:7px 12px}
   .cart-bar{padding:8px 12px}
+  .cart-drawer{max-height:86dvh}
+  .cart-item{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px 10px}
+  .cart-qty{grid-column:1}
+  .cart-item-total{grid-column:2;grid-row:1 / span 2}
+  .cart-actions{flex-direction:column}
+  .btn-secondary{width:100%}
   .countdown-time{font-size:36px}
+  .order-overlay{align-items:flex-start;padding:12px}
+  .order-modal{max-height:calc(100dvh - 24px);max-width:none}
+  .ref-white-box{padding:0 12px 14px}
+  .ref-countdown{font-size:34px;letter-spacing:2px}
+  .ref-red-box{padding:10px 12px}
+  .order-item{align-items:flex-start;gap:8px}
+  .order-item-left{flex-wrap:wrap}
+  .order-item-name{max-width:100%}
+  .order-item-spec{flex-basis:100%;margin-left:25px}
 }
 </style>
 </head>
@@ -227,8 +259,8 @@ body{font-family:-apple-system,'Inter','SF Pro Display','Helvetica Neue',sans-se
   <div class="header-inner">
     <div class="header-logo">★</div>
     <div class="header-text">
-      <h1>Premium Peptide <span>Supply Co.</span></h1>
-      <div class="sub">Research Grade · Lab Tested · Discreet Shipping</div>
+      <h1>Research Peptide <span>Supply Catalog</span></h1>
+      <div class="sub">Lab-Grade Peptides · Research Use Only · Discreet Fulfillment</div>
     </div>
     <div class="header-badge">
       <div class="val">140+</div>
